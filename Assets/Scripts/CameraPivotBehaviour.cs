@@ -34,7 +34,9 @@ public class CameraPivotBehaviour : MonoBehaviour
 
     private Transform m_transform; //Camera transform
 
-    private void Start()
+	public GameObject Player { get => player; set => player =  value ; }
+
+	private void Start()
     {
         m_transform = transform;
     }

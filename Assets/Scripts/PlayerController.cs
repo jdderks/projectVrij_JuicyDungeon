@@ -41,7 +41,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Transform cameraTransform;
-    private void Start()
+
+	public Transform CameraTransform { get => cameraTransform; set => cameraTransform =  value ; }
+
+	private void Start()
     {
         animator = GetComponent<Animator>();
 
