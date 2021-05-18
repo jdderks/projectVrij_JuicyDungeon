@@ -9,11 +9,9 @@ public class CameraOrbitBehaviour : MonoBehaviour
     private Quaternion _LocalRotation;
     private float _CameraDistance = 10.0f;
 
-
-    [SerializeField]
-    private Quaternion startingRotation = new Quaternion(45, 45, 0, 0);
-
-    [SerializeField] private float MouseSensitivity = 4.0f;
+    [Space, SerializeField] private Quaternion startingRotation = new Quaternion(45, 45, 0, 0);
+    [SerializeField] private float startingLength = 2.0f;
+    [Space, SerializeField] private float MouseSensitivity = 4.0f;
     [SerializeField] private float ScrollSensitvity = 2.0f;
     [SerializeField] private float OrbitDampening = 10.0f;
     [SerializeField] private float ScrollDampening = 6.0f;
@@ -30,12 +28,12 @@ public class CameraOrbitBehaviour : MonoBehaviour
         {
             Debug.LogWarning("You did not assign the key to pause camera orbiting");
         }
-        this._XForm_Camera = this.transform;
-        this._XForm_Parent = this.transform.parent;
+        _XForm_Camera = transform;
+        _XForm_Parent = transform.parent;
 
 
-        _LocalRotation = startingRotation;
     }
+
 
     void LateUpdate()
     {
@@ -44,7 +42,7 @@ public class CameraOrbitBehaviour : MonoBehaviour
             CameraDisabled = !CameraDisabled;
         }
 
-        if (Input.GetButton("Fire2") && !CameraDisabled)
+        if (Input.GetButton("Fire2"))
         {
             //Rotation of the Camera based on Mouse Coordinates
             if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
@@ -70,19 +68,20 @@ public class CameraOrbitBehaviour : MonoBehaviour
         {
             float ScrollAmount = Input.GetAxis("Mouse ScrollWheel") * ScrollSensitvity;
 
-            ScrollAmount *= (this._CameraDistance * 0.3f);
+            ScrollAmount *= (_CameraDistance * 0.3f);
 
-            this._CameraDistance += ScrollAmount * -1f;
+            _CameraDistance += ScrollAmount * -1f;
 
-            this._CameraDistance = Mathf.Clamp(this._CameraDistance, minZoomDistance, maxZoomDistance);
+            _CameraDistance = Mathf.Clamp(_CameraDistance, minZoomDistance, maxZoomDistance);
         }
 
         //Actual Camera Rig Transformations
         Quaternion QT = Quaternion.Euler(_LocalRotation.y, _LocalRotation.x, 0);
-        this._XForm_Parent.rotation = Quaternion.Lerp(this._XForm_Parent.rotation, QT, Time.deltaTime * OrbitDampening);
-        if (this._XForm_Camera.localPosition.z != this._CameraDistance * -1f)
+        _XForm_Parent.rotation = Quaternion.Lerp(_XForm_Parent.rotation, QT, Time.deltaTime * OrbitDampening);
+
+        if (_XForm_Camera.localPosition.z != _CameraDistance * -1f)
         {
-            this._XForm_Camera.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this._XForm_Camera.localPosition.z, this._CameraDistance * -1f, Time.deltaTime * ScrollDampening));
+            _XForm_Camera.localPosition = new Vector3(0f, 0f, Mathf.Lerp(_XForm_Camera.localPosition.z, _CameraDistance * -1f, Time.deltaTime * ScrollDampening));
         }
     }
 }
