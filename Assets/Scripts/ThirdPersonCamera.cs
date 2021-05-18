@@ -11,8 +11,9 @@ public class ThirdPersonCamera : MonoBehaviour
     private float yaw;
     private float pitch;
 
-    
-    private void Update()
+	public Transform Target { get => target; set => target =  value ; }
+
+	private void Update()
     {
         yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
         pitch += Input.GetAxis("Mouse Y") * mouseSensitivity;

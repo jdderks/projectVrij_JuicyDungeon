@@ -53,11 +53,6 @@ namespace DungeonGenerationPathFirst
 		public string Seed { get => seed; set => seed = value; }
 		//public DungeonGeneratorStatus Status { get => status; set => status = value; }
 
-		private void Start()
-		{
-			GenerateDungeon();
-		}
-
 		/// <summary>
 		/// The Generate Dungeon Function in theory is just a function that calls other functions.
 		/// Might sound a bit backwards, but this makes a nice readeable script layout.
@@ -697,6 +692,20 @@ namespace DungeonGenerationPathFirst
 		}
 
 
+		public Room GetRoomByType(RoomType type)
+		{
+			Room returnRoom = null;
+
+			foreach( Room room in Rooms )
+			{
+				if( room.Type == type )
+				{
+					returnRoom = room;
+				}
+			}
+
+			return returnRoom;
+		}
 
 		private void OnDrawGizmos()
 		{
