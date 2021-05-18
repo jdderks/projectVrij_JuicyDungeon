@@ -6,12 +6,19 @@ using Random = UnityEngine.Random;
 
 namespace DungeonGenerationPathFirst
 {
+	//public enum DungeonGeneratorStatus
+	//{
+	//	IDLE,
+	//	GENERATING,
+	//	DONE
+	//};
 	/// <summary>
 	/// The Dungeon Generator class is responsible for generatin the entire level a.k.a. Dungeon.
 	/// This dungeon involves rooms and pathways to those rooms. Each room can contain: Enemies, Treasures, NPC and more.
 	/// </summary>
 	public class DungenPathFirst : MonoBehaviour
 	{
+		//[BoxGroup( "Generation Settings" )] [serializeField] private DungeonGeneratorStatus status = DungeonGeneratorStatus.IDLE;
 		[BoxGroup( "Generation Settings" )] [SerializeField] private bool randomizeSeed = false;               // Determines if the seed should be randomized each time.
 		[BoxGroup( "Generation Settings" )] [SerializeField] private string seed = "";
 		[BoxGroup( "Generation Settings" )] [SerializeField] private Transform roomParentTransform = default;   // Parent of the rooms in the scene.
@@ -44,6 +51,7 @@ namespace DungeonGenerationPathFirst
 		private int pathwayIndex = 0;   // Index of the Pathway (Used for giving the Pathways their unique ID in their names).
 
 		public string Seed { get => seed; set => seed = value; }
+		//public DungeonGeneratorStatus Status { get => status; set => status = value; }
 
 		private void Start()
 		{
@@ -56,6 +64,7 @@ namespace DungeonGenerationPathFirst
 		/// </summary>
 		public void GenerateDungeon()
 		{
+			//status = DungeonGeneratorStatus.GENERATING;
 			if( randomizeSeed ) seed = Random.Range( 0, int.MaxValue ).ToString();
 			Random.InitState( seed.GetHashCode() );
 
@@ -75,6 +84,7 @@ namespace DungeonGenerationPathFirst
 
 			//SpawnEnemiesInsideTheRooms();
 
+			//status = DungeonGeneratorStatus.DONE;
 			Debug.Log( "Dungeon Generation Took: " + ( DateTime.Now - startTime ).Milliseconds + "ms" );
 		}
 
