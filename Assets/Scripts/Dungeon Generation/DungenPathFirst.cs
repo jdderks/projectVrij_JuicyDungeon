@@ -266,6 +266,7 @@ namespace DungeonGenerationPathFirst
 			Vector3 dir = Vector3.zero;
 			Room froom = Rooms[0];
 
+			// Get Furthest Room from center of the world.
 			foreach( Room room in Rooms )
 			{
 				if( Vector3.Distance( room.transform.position, Vector3.zero ) > distance )
@@ -278,6 +279,7 @@ namespace DungeonGenerationPathFirst
 
 			Debug.Log( "Dir: " + dir );
 
+			// Decide which direction the room should be placed in.
 			Vector2Int coordinates = froom.Coordinates;
 			Vector2Int coordinatesDir = Vector2Int.zero;
 
@@ -542,7 +544,7 @@ namespace DungeonGenerationPathFirst
 				{
 					tile.Type = TileType.WALL;
 					tile.Graphic = tileWallObjects[Random.Range( 0, tileWallObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, 90, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 0, 0 );
 				}
 
 				// Check if this tile is all the way in the Right of a room. a.k.a. no Right neighbour.
@@ -550,7 +552,7 @@ namespace DungeonGenerationPathFirst
 				{
 					tile.Type = TileType.WALL;
 					tile.Graphic = tileWallObjects[Random.Range( 0, tileWallObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, -90, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 180, 0 );
 				}
 
 				// Check if this tile is all the way in the Top of a room. a.k.a. no top neighbour.
@@ -558,7 +560,7 @@ namespace DungeonGenerationPathFirst
 				{
 					tile.Type = TileType.WALL;
 					tile.Graphic = tileWallObjects[Random.Range( 0, tileWallObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, 180, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 90, 0 );
 				}
 
 				// Check if this tile is all the way in the Bottom of a room. a.k.a. no bottom neighbour.
@@ -566,7 +568,7 @@ namespace DungeonGenerationPathFirst
 				{
 					tile.Type = TileType.WALL;
 					tile.Graphic = tileWallObjects[Random.Range( 0, tileWallObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, 0, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 270, 0 );
 				}
 
 				//#####################\\
