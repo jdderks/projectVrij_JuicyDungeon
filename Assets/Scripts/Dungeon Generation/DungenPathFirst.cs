@@ -210,7 +210,7 @@ namespace DungeonGenerationPathFirst
 		/// Generates a room at the givin coordinates with the givin min/max roomsize.
 		/// </summary>
 		/// <param name="coordinates"> Room Starting Coordinates. </param>
-		private void GenerateRoom( Vector2Int coordinates, Vector2Int _roomsizeMIN, Vector2Int _roomsizeMAX, string roomName = default, RoomType roomType = RoomType.NONE )
+		private void GenerateRoom( Vector2Int coordinates, Vector2Int _roomsizeMIN, Vector2Int _roomsizeMAX, string roomName = default, RoomType roomType = RoomType.NONE, bool overwrite = true )
 		{
 			roomIndex++;
 
@@ -251,7 +251,7 @@ namespace DungeonGenerationPathFirst
 			{
 				for( int y = 0; y < roomSizeY; y++ )
 				{
-					CreateTile( "Tile [" + ( coordinates.x + x ) + "]" + " " + "[" + ( coordinates.y + y ) + "]", new Vector2Int( coordinates.x - ( roomSizeX / 2 ) + x, coordinates.y - ( roomSizeY / 2 ) + y ), roomGO.transform );
+					CreateTile( "Tile [" + ( coordinates.x + x ) + "]" + " " + "[" + ( coordinates.y + y ) + "]", new Vector2Int( coordinates.x - ( roomSizeX / 2 ) + x, coordinates.y - ( roomSizeY / 2 ) + y ), roomGO.transform, overwrite );
 				}
 			}
 		}
@@ -313,15 +313,15 @@ namespace DungeonGenerationPathFirst
 			// Make the path 3 wide. We dont have to worry about duplicate tiles because those won't get generated anyway.
 			for( int j = 0; j < pathwayLength; j++ )
 			{
-				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ), coordinates.y + ( coordinatesDir.y * j ) ), pathwayGO.transform );
-				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) - 1, coordinates.y + ( coordinatesDir.y * j ) - 1 ), pathwayGO.transform );
-				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) + 1, coordinates.y + ( coordinatesDir.y * j ) + 1 ), pathwayGO.transform );
+				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ), coordinates.y + ( coordinatesDir.y * j ) ), pathwayGO.transform, false );
+				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) - 1, coordinates.y + ( coordinatesDir.y * j ) - 1 ), pathwayGO.transform, false );
+				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) + 1, coordinates.y + ( coordinatesDir.y * j ) + 1 ), pathwayGO.transform, false );
 			}
 
 			// Create a room at the end of each pathway.
 			coordinates.x += coordinatesDir.x * pathwayLength;
 			coordinates.y += coordinatesDir.y * pathwayLength;
-			GenerateRoom( coordinates, minRoomSize, maxRoomSize, "Room[PLAYER SPAWN]", RoomType.SPAWN );
+			GenerateRoom( coordinates, minRoomSize, maxRoomSize, "Room[PLAYER SPAWN]", RoomType.SPAWN, true );
 
 			pathwayIndex++;
 		}
@@ -384,15 +384,15 @@ namespace DungeonGenerationPathFirst
 			// Make the path 3 wide. We dont have to worry about duplicate tiles because those won't get generated anyway.
 			for( int j = 0; j < pathwayLength; j++ )
 			{
-				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ), coordinates.y + ( coordinatesDir.y * j ) ), pathwayGO.transform );
-				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) - 1, coordinates.y + ( coordinatesDir.y * j ) - 1 ), pathwayGO.transform );
-				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) + 1, coordinates.y + ( coordinatesDir.y * j ) + 1 ), pathwayGO.transform );
+				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ), coordinates.y + ( coordinatesDir.y * j ) ), pathwayGO.transform, false );
+				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) - 1, coordinates.y + ( coordinatesDir.y * j ) - 1 ), pathwayGO.transform, false );
+				CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) + 1, coordinates.y + ( coordinatesDir.y * j ) + 1 ), pathwayGO.transform, false );
 			}
 
 			// Create a room at the end of each pathway.
 			coordinates.x += coordinatesDir.x * pathwayLength;
 			coordinates.y += coordinatesDir.y * pathwayLength;
-			GenerateRoom( coordinates, new Vector2Int( 25, 25 ), new Vector2Int( 25, 25 ), "Room[BOSS ROOM]", RoomType.BOSS );
+			GenerateRoom( coordinates, new Vector2Int( 25, 25 ), new Vector2Int( 25, 25 ), "Room[BOSS ROOM]", RoomType.BOSS, true );
 
 			pathwayIndex++;
 		}
@@ -402,7 +402,7 @@ namespace DungeonGenerationPathFirst
 		/// </summary>
 		/// <param name="tileName"> The name of the tile. </param>
 		/// <param name="coordinates"> The coordinates of the tile. </param>
-		private void CreateTile( string tileName, Vector2Int coordinates, Transform parentTransform = null )
+		private void CreateTile( string tileName, Vector2Int coordinates, Transform parentTransform = null, bool overwrite = true )
 		{
 			// This removes a possible duplicate tile with the same coordinates.
 			// We could check for duplicate tile and return the function, but this makes the hierarchy cleaner.
@@ -410,9 +410,16 @@ namespace DungeonGenerationPathFirst
 			{
 				if( tiles[t].Coordinates == new Vector2Int( coordinates.x, coordinates.y ) * tileSize )
 				{
-					GameObject tileOBJ = tiles[t].gameObject;
-					tiles.RemoveAt( t );
-					DestroyImmediate( tileOBJ );
+					if( overwrite )
+					{
+						GameObject tileOBJ = tiles[t].gameObject;
+						tiles.RemoveAt( t );
+						DestroyImmediate( tileOBJ );
+					}
+					else
+					{
+						return;
+					}
 				}
 			}
 
@@ -694,7 +701,7 @@ namespace DungeonGenerationPathFirst
 		}
 
 
-		public Room GetRoomByType(RoomType type)
+		public Room GetRoomByType( RoomType type )
 		{
 			Room returnRoom = null;
 
