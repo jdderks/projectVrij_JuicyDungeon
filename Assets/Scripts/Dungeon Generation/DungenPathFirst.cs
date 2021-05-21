@@ -145,6 +145,14 @@ namespace DungeonGenerationPathFirst
 				{
 					Room room = rooms[r];
 
+					for( int t = 0; t < room.Tiles.Count; t++ )
+					{
+						Tile tile = room.Tiles[t];
+
+						tiles.Remove( tile );
+						DestroyImmediate( tile.gameObject );
+					}
+
 					rooms.Remove( room );
 					DestroyImmediate( room.gameObject );
 				}
@@ -738,7 +746,7 @@ namespace DungeonGenerationPathFirst
 
 			foreach( Room room in rooms )
 			{
-				if( room.transform.childCount > 0)
+				if( room.transform.childCount > 0 )
 				{
 					for( int p = 0; p < propsPerRoom; p++ )
 					{
