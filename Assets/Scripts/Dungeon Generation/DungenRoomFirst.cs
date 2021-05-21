@@ -12,7 +12,6 @@ using Random = UnityEngine.Random;
 
 namespace DungeonGenerationRoomFirst
 {
-
 	public class DungenRoomFirst : MonoBehaviour
 	{
 		[BoxGroup( "Dungeon Generation Settings" )] [SerializeField] private bool randomizeSeed;
@@ -584,7 +583,7 @@ namespace DungeonGenerationRoomFirst
 				Instantiate( groundTileObjects[randGroundIndex], pathwayTilesInDungeon[pt].transform.position, Quaternion.identity, pathwayTilesInDungeon[pt].transform );
 			}
 		}
-
+#if UNITY_EDITOR
 		private void OnDrawGizmos()
 		{
 			Gizmos.color = Color.blue;
@@ -655,6 +654,7 @@ namespace DungeonGenerationRoomFirst
 				}
 			}
 		}
+#endif
 	}
 
 	public enum TileType
