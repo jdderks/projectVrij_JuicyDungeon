@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1823028951817771431}
   - component: {fileID: 3378659289342596610}
   - component: {fileID: 650664528283312840}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HallWayStraight_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

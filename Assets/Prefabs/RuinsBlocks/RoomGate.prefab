@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8722458117567854038}
   - component: {fileID: 5666582644902967923}
   - component: {fileID: 7586113106548707001}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RoomGate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

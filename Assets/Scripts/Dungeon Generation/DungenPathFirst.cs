@@ -103,6 +103,8 @@ namespace DungeonGenerationPathFirst
 
 			//status = DungeonGeneratorStatus.DONE;
 			Debug.Log( "Dungeon Generation Took: " + ( DateTime.Now - startTime ).Milliseconds + "ms" );
+
+			GameManager.Instance.BakeNavMesh();
 		}
 
 		/// <summary>
