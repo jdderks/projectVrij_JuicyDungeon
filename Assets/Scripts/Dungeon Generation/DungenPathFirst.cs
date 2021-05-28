@@ -1,3 +1,15 @@
+///	TODO: (Priority)
+/// -	Seperate many structs and classes into sepperate files for a more organized working environment.							 (DONE)
+/// -	Seperate many methods into classes. Also for a more organized working environment.
+/// -	Add overwrites for many existing methods to make my own life easier. Like spawning an enemy by type instead of by a list.
+
+/// TODO: (Nice to Have)
+/// -	Fix possible wrong implementation of the coordinate system. Spawning objects through the coordinates system leaves much to be desired.
+/// -	Build a seperate tool with which you can easily change the dungeon generation settings instead of the current massive inspector it needs now.
+/// -	Implement a way to add Rules to the dungeon. For example a rule that there must always be a treassure room, but this room can only spawn at X with Y enemies that have Z Abilities, etc.
+/// -	Makes use of Scriptable Objects for the enemies, props and possibly all the tiles.
+///		This creates a very easy to edit workflow and allows lots of experimentation instead of having to mess around in the code or edit lots and lots of prefabs.
+
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +59,7 @@ namespace DungeonGenerationPathFirst
 		[Foldout( "Generated Assets" )] [SerializeField] private List<Room> rooms = new List<Room>();       // List with all the rooms in the dungeon.
 		[Foldout( "Generated Assets" )] [SerializeField] private List<Tile> tiles = new List<Tile>();       // List with all the tiles in the dungeon.
 		[Foldout( "Generated Assets" )] [SerializeField] private List<GameObject> props = new List<GameObject>();       // List with all the props in the dungeon.
+		[Foldout( "Generated Assets" )] [SerializeField] private List<GameObject> enemies = new List<GameObject>();       // List with all the enemies in the dungeon.
 
 		[Foldout( "Debugging" )] [SerializeField] private bool renderDungeonAsGizmos = false;      // Render the entire dungeon using gizmos.
 		[Foldout( "Debugging" )] [SerializeField] private TextMeshProUGUI dungeonSeedText;
@@ -86,7 +99,7 @@ namespace DungeonGenerationPathFirst
 			InstantiateTilesGraphic();
 
 			SpawnProps();
-			//SpawnEnemiesInsideTheRooms();
+			SpawnEnemiesWithinRooms();
 
 			//status = DungeonGeneratorStatus.DONE;
 			Debug.Log( "Dungeon Generation Took: " + ( DateTime.Now - startTime ).Milliseconds + "ms" );
@@ -120,6 +133,14 @@ namespace DungeonGenerationPathFirst
 			{
 				DestroyImmediate( pathwayChildGO );
 			}
+			foreach( GameObject prop in props )
+			{
+				DestroyImmediate( prop );
+			}
+			foreach( GameObject enemy in enemies )
+			{
+				DestroyImmediate( enemy );
+			}
 
 
 			roomIndex = 0;
@@ -128,6 +149,7 @@ namespace DungeonGenerationPathFirst
 			rooms.Clear();
 			tiles.Clear();
 			props.Clear();
+			enemies.Clear();
 
 			roomChildren.Clear();
 			pathwayChildren.Clear();
@@ -145,12 +167,18 @@ namespace DungeonGenerationPathFirst
 				{
 					Room room = rooms[r];
 
-					for( int t = 0; t < room.Tiles.Count; t++ )
+					if( room.Tiles.Count > 0 )
 					{
-						Tile tile = room.Tiles[t];
+						for( int t = 0; t < room.Tiles.Count; t++ )
+						{
+							Tile tile = room.Tiles[t];
 
-						tiles.Remove( tile );
-						DestroyImmediate( tile.gameObject );
+							if( tile != null )
+							{
+								tiles.Remove( tile );
+								DestroyImmediate( tile.gameObject );
+							}
+						}
 					}
 
 					rooms.Remove( room );
@@ -226,9 +254,9 @@ namespace DungeonGenerationPathFirst
 				// Make the path 3 wide. We dont have to worry about duplicate tiles because those won't get generated anyway.
 				for( int j = 0; j < pathwayLength; j++ )
 				{
-					CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ), coordinates.y + ( coordinatesDir.y * j ) ), pathwayGO.transform );
-					CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) - 1, coordinates.y + ( coordinatesDir.y * j ) - 1 ), pathwayGO.transform );
-					CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) + 1, coordinates.y + ( coordinatesDir.y * j ) + 1 ), pathwayGO.transform );
+					CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ), coordinates.y + ( coordinatesDir.y * j ) ), pathwayGO.transform, false );
+					CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) - 1, coordinates.y + ( coordinatesDir.y * j ) - 1 ), pathwayGO.transform, false );
+					CreateTile( "Pathway [" + pathwayIndex + "]", new Vector2Int( coordinates.x + ( coordinatesDir.x * j ) + 1, coordinates.y + ( coordinatesDir.y * j ) + 1 ), pathwayGO.transform, false );
 				}
 
 				// Create a room at the end of each pathway.
@@ -246,48 +274,67 @@ namespace DungeonGenerationPathFirst
 		/// Generates a room at the givin coordinates with the givin min/max roomsize.
 		/// </summary>
 		/// <param name="coordinates"> Room Starting Coordinates. </param>
-		private void GenerateRoom( Vector2Int coordinates, Vector2Int _roomsizeMIN, Vector2Int _roomsizeMAX, string roomName = default, RoomType roomType = RoomType.NONE, bool overwrite = true )
+		private void GenerateRoom( Vector2Int coordinates, Vector2Int _roomsizeMIN, Vector2Int _roomsizeMAX, string roomName = default, RoomType roomType = RoomType.NONE, bool overwrite = true, Transform _roomParentTransform = null )
 		{
-			roomIndex++;
+			bool generateNewRoom = true;
 
-			int roomSizeX = Random.Range( _roomsizeMIN.x, _roomsizeMAX.x );
-			int roomSizeY = Random.Range( _roomsizeMIN.y, _roomsizeMAX.y );
-
-			// Force the width and height to be an Odd number
-			if( roomSizeX % 2 == 0 )
-				roomSizeX -= 1;
-			if( roomSizeY % 2 == 0 )
-				roomSizeY -= 1;
-
-			GameObject roomGO = new GameObject();
-			Room room = roomGO.AddComponent<Room>();
-
-			room.Name = ( roomName == default ) ? "Room [" + roomIndex + "]" : roomName;
-			room.Coordinates = coordinates;
-			room.RoomSize = new Vector2Int( roomSizeX, roomSizeY );
-			room.Type = roomType;
-
-			if( roomType == RoomType.NONE )
+			for( int r = 0; r < rooms.Count; r++ )
 			{
-				int randInt = Random.Range( 0, 50 );
-
-				if( randInt > 0 && randInt < 15 ) room.Type = RoomType.ENEMYSPAWN;
-				else if( randInt > 15 && randInt < 35 ) room.Type = RoomType.HUB;
-				else if( randInt > 35 && randInt < 45 ) room.Type = RoomType.SHOP;
-				else if( randInt > 45 && randInt < 50 ) room.Type = RoomType.TREASURE;
+				if( coordinates == rooms[r].Coordinates )
+				{
+					generateNewRoom = false;
+				}
 			}
 
-			roomGO.name = room.Name;
-			roomGO.transform.position = new Vector3Int( coordinates.x, 0, coordinates.y );
-			roomGO.transform.parent = roomParentTransform;
-
-			rooms.Add( room );
-
-			for( int x = 0; x < roomSizeX; x++ )
+			if( generateNewRoom )
 			{
-				for( int y = 0; y < roomSizeY; y++ )
+				roomIndex++;
+
+				int roomSizeX = Random.Range( _roomsizeMIN.x, _roomsizeMAX.x );
+				int roomSizeY = Random.Range( _roomsizeMIN.y, _roomsizeMAX.y );
+
+				// Force the width and height to be an Odd number
+				if( roomSizeX % 2 == 0 )
+					roomSizeX -= 1;
+				if( roomSizeY % 2 == 0 )
+					roomSizeY -= 1;
+
+				GameObject roomGO = new GameObject();
+				Room room = roomGO.AddComponent<Room>();
+
+				room.Name = ( roomName == default ) ? "Room [" + roomIndex + "]" : roomName;
+				room.Coordinates = coordinates;
+				room.RoomSize = new Vector2Int( roomSizeX, roomSizeY );
+				room.Type = roomType;
+
+				if( roomType == RoomType.NONE )
 				{
-					CreateTile( "Tile [" + ( coordinates.x + x ) + "]" + " " + "[" + ( coordinates.y + y ) + "]", new Vector2Int( coordinates.x - ( roomSizeX / 2 ) + x, coordinates.y - ( roomSizeY / 2 ) + y ), roomGO.transform, overwrite );
+					int randInt = Random.Range( 0, 50 );
+
+					if( randInt > 0 && randInt < 15 ) room.Type = RoomType.ENEMYSPAWN;
+					else if( randInt > 15 && randInt < 35 ) room.Type = RoomType.HUB;
+					else if( randInt > 35 && randInt < 45 ) room.Type = RoomType.SHOP;
+					else if( randInt > 45 && randInt < 50 ) room.Type = RoomType.TREASURE;
+				}
+
+				roomGO.name = room.Name;
+
+				if( _roomParentTransform == null )
+					roomGO.transform.parent = roomParentTransform;
+				else
+					roomGO.transform.parent = _roomParentTransform;
+
+				roomGO.transform.position = new Vector3Int( coordinates.x, 0, coordinates.y );
+
+
+				rooms.Add( room );
+
+				for( int x = 0; x < roomSizeX; x++ )
+				{
+					for( int y = 0; y < roomSizeY; y++ )
+					{
+						CreateTile( "Tile [" + ( coordinates.x + x ) + "]" + " " + "[" + ( coordinates.y + y ) + "]", new Vector2Int( coordinates.x - ( roomSizeX / 2 ) + x, coordinates.y - ( roomSizeY / 2 ) + y ), roomGO.transform, overwrite );
+					}
 				}
 			}
 		}
@@ -312,8 +359,6 @@ namespace DungeonGenerationPathFirst
 					froom = room;
 				}
 			}
-
-			Debug.Log( "Dir: " + dir );
 
 			// Decide which direction the room should be placed in.
 			Vector2Int coordinates = froom.Coordinates;
@@ -385,8 +430,6 @@ namespace DungeonGenerationPathFirst
 			//int roomIndex = Rooms.IndexOf( froom ) - 1;
 			//dir = Rooms[roomIndex].transform.position - froom.transform.position;
 
-			Debug.Log( "Dir: " + dir );
-
 			Vector2Int coordinates = froom.Coordinates;
 			Vector2Int coordinatesDir = Vector2Int.zero;
 
@@ -429,6 +472,7 @@ namespace DungeonGenerationPathFirst
 			coordinates.x += coordinatesDir.x * pathwayLength;
 			coordinates.y += coordinatesDir.y * pathwayLength;
 			GenerateRoom( coordinates, new Vector2Int( 25, 25 ), new Vector2Int( 25, 25 ), "Room[BOSS ROOM]", RoomType.BOSS, true );
+			SpawnEnemy( coordinates, GetRoomByType( RoomType.BOSS ).transform );
 
 			pathwayIndex++;
 		}
@@ -705,20 +749,22 @@ namespace DungeonGenerationPathFirst
 		/// <summary>
 		/// Spawns enemies inside the rooms.
 		/// </summary>
-		private void SpawnEnemiesInsideTheRooms()
+		private void SpawnEnemiesWithinRooms()
 		{
-			// Ignore the first room because that's where the player spawns.
-			for( int r = 1; r < rooms.Count; r++ )
+			if( enemyLists.Count == 0 ) return;
+
+			foreach( Room room in rooms )
 			{
-				if( rooms[r].Tiles.Count == 0 )
-					return;
-
-				for( int t = 0; t < rooms[r].Tiles.Count; t++ )
+				if( room.Type == RoomType.ENEMYSPAWN )
 				{
-					Tile tile = rooms[r].Tiles[t];
-
-					if( tile.Type == TileType.GROUND )
-						SpawnEnemy( tile.Coordinates, rooms[r].transform );
+					foreach( Tile tile in room.Tiles )
+					{
+						if( tile.Type == TileType.GROUND && tile.Populated == false )
+						{
+							SpawnEnemy( tile.Coordinates, room.transform );
+							tile.Populated = true;
+						}
+					}
 				}
 			}
 		}
@@ -728,11 +774,28 @@ namespace DungeonGenerationPathFirst
 		/// <param name="coordinates"> Which coordinate to spawn the enemy on. </param>
 		private void SpawnEnemy( Vector2 coordinates, Transform parent = null )
 		{
+			int randomEnemyListChance = Random.Range( 0, 100 );
+			int enemyListIndex = 0;
+
+			// Normal Enemy List. (Common)
+			if( randomEnemyListChance > 0 && randomEnemyListChance < 75 ) enemyListIndex = 0;
+			// Elite Enemy List. (Uncommon)
+			else if( randomEnemyListChance > 75 && randomEnemyListChance < 95 ) enemyListIndex = 1;
+			// Legendary Enemy List. (Rare)
+			else if( randomEnemyListChance > 95 && randomEnemyListChance < 100 ) enemyListIndex = 2;
+
 			int spawnPercentage = Random.Range( 0, 100 );
 			if( spawnPercentage <= spawnChance )
 			{
-				int randEnemyIndex = Random.Range( 0, enemyLists[0].Enemies.Count );
-				GameObject newEnemyGO = Instantiate( enemyLists[0].Enemies[randEnemyIndex], coordinates, Quaternion.identity, parent );
+				int randEnemyIndex = Random.Range( 0, enemyLists[enemyListIndex].Enemies.Count );
+
+				GameObject newEnemyGO = Instantiate( enemyLists[enemyListIndex].Enemies[randEnemyIndex], Vector3Int.zero, Quaternion.identity, parent );
+
+				Vector3 pos = new Vector3( coordinates.x, 0 + newEnemyGO.transform.localScale.y, coordinates.y );
+
+				newEnemyGO.transform.position = pos;
+
+				enemies.Add( newEnemyGO );
 			}
 		}
 
@@ -742,6 +805,8 @@ namespace DungeonGenerationPathFirst
 		/// </summary>
 		private void SpawnProps()
 		{
+			if( spawnableProps.Count == 0 ) return;
+
 			int propsPerRoom = propsAmount / rooms.Count;
 
 			foreach( Room room in rooms )
@@ -763,6 +828,7 @@ namespace DungeonGenerationPathFirst
 							{
 								tileIndex = Random.Range( 0, room.Tiles.Count - 1 );
 								spawnTile = room.Tiles[tileIndex];
+								spawnTile.Populated = true;
 							}
 
 							GameObject newPropGO = Instantiate( spawnableProps[propIndex].PrefabObject, spawnTile.transform.position, Quaternion.identity, spawnTile.transform );
@@ -773,7 +839,6 @@ namespace DungeonGenerationPathFirst
 				}
 			}
 		}
-
 
 		public Room GetRoomByType( RoomType type )
 		{
@@ -807,97 +872,13 @@ namespace DungeonGenerationPathFirst
 		}
 	}
 
-	public enum TileType
-	{
-		GROUND,         // A normal ground tile. (surrounded by other tiles)
-		WALL,           // Wall Tile. (Missing Neighbour on one side)
-		OUTER_CORNER,   // Outer Corner Tile. (Missing Neighbour on atleast 2 sides)
-		INNER_CORNER,   // Outer Corner Tile.
-		DOOR            // Door Tile. (Missing Corner neighbours)
-	}
-
-	public enum RoomType
-	{
-		NONE,
-		SPAWN,          // Player Spawn Room. (Always only 1 per level)
-		EXIT,           // Player Exit Room. (Always only 1 per level)
-		ENEMYSPAWN,     // Enemy Spawn Room. Most commong room type
-		SHOP,           // Shop where player can buy/sell items. 30% of spawning per level.
-		BOSS,           // Boss room, always present and always in the way of the exit.
-		TREASURE,       // Treasure rooms are rare, but grant some nice loot.
-		HUB,            // A hub room is nothing more than a room that connects to other rooms. See it as a place to breath and regen.
-		OBJECTIVE       // Objective rooms are rooms that hold the item(s) required to finish the objective.
-	}
-
-	[System.Serializable]
-	public class Tile : MonoBehaviour
-	{
-		[SerializeField] private new string name = default;
-		[SerializeField] private int size = 1;
-		[SerializeField] private TileType type = TileType.GROUND;
-		[SerializeField] private Vector2Int coordinates = Vector2Int.zero;
-		[SerializeField] private GameObject graphic = null;
-		[SerializeField] private Quaternion graphicRotation = Quaternion.identity;
-		[SerializeField] private Transform parentTransform = default;
-
-		public string Name { get => name; set => name = value; }
-		public int Size { get => size; set => size = value; }
-		public TileType Type { get => type; set => type = value; }
-		public Vector2Int Coordinates { get => coordinates; set => coordinates = value; }
-		public GameObject Graphic { get => graphic; set => graphic = value; }
-		public Quaternion GraphicRotation { get => graphicRotation; set => graphicRotation = value; }
-		public Transform ParentTransform { get => parentTransform; set => parentTransform = value; }
-
-		public Tile( string name = null, TileType _type = TileType.GROUND, Vector2Int _coordinates = default, GameObject _graphic = null, Quaternion _graphicRotation = default, Transform _parentTransform = default )
-		{
-			this.name = name;
-			type = _type;
-			coordinates = _coordinates;
-			graphic = _graphic;
-			graphicRotation = _graphicRotation;
-			parentTransform = _parentTransform;
-		}
-	}
-
-	[System.Serializable]
-	public class Room : MonoBehaviour
-	{
-		[SerializeField] private new string name;
-		[SerializeField] private Vector2Int roomSize = new Vector2Int();
-		[SerializeField] private Vector2Int coordinates;
-		[SerializeField] private List<Tile> tiles = new List<Tile>();
-		[SerializeField] private RoomType type = RoomType.HUB;
-
-		public List<Tile> Tiles { get => tiles; set => tiles = value; }
-		public Vector2Int RoomSize { get => roomSize; set => roomSize = value; }
-		public Vector2Int Coordinates { get => coordinates; set => coordinates = value; }
-		public string Name { get => name; set => name = value; }
-		public RoomType Type { get => type; set => type = value; }
-	}
-
 	[System.Serializable]
 	public struct EnemyList
 	{
-		[SerializeField] private new string name;
+		[SerializeField] private string name;
 		[SerializeField] private List<GameObject> enemies;
 
 		public List<GameObject> Enemies { get => enemies; set => enemies = value; }
-	}
-
-	[System.Serializable]
-	public struct Prop
-	{
-		[SerializeField] private string name;
-		[SerializeField] private GameObject prefabObject;
-		[SerializeField] private float spawnChance;
-		[Space]
-		[SerializeField] private Vector3 rotationOffset;
-		[SerializeField] private Vector3 positionOffset;
-
 		public string Name { get => name; set => name = value; }
-		public GameObject PrefabObject { get => prefabObject; set => prefabObject = value; }
-		public float SpawnChance { get => spawnChance; set => spawnChance = value; }
-		public Vector3 RotationOffset { get => rotationOffset; set => rotationOffset = value; }
-		public Vector3 PositionOffset { get => positionOffset; set => positionOffset = value; }
 	}
 }
