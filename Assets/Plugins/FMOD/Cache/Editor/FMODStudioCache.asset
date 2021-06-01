@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: event:/Player_Footsteps_Running
   guid: 9d234e5e91cea2429a064c742ba43fa0
   Banks:
-  - {fileID: -3143921617860471796}
+  - {fileID: 3224631311241806154}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -43,7 +43,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 82816
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,18 +57,37 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 7118010033455544411}
-  - {fileID: -3143921617860471796}
+  - {fileID: 4430748411869207155}
+  - {fileID: 3224631311241806154}
   EditorEvents:
   - {fileID: -4392097224166631365}
   - {fileID: 5558411858782488959}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3143921617860471796}
+  - {fileID: 3224631311241806154}
   StringsBanks:
-  - {fileID: 7118010033455544411}
-  stringsBankWriteTime: 637581708213876402
+  - {fileID: 4430748411869207155}
+  stringsBankWriteTime: 637581724730244758
   cacheVersion: 6
+--- !u!114 &3224631311241806154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/ProjectVrij2/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637581724730219952
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4352673259943921300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +110,27 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &4430748411869207155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_Project/ProjectVrij2/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637581724730244758
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 812
+  Exists: 1
 --- !u!114 &5558411858782488959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +146,7 @@ MonoBehaviour:
   Path: event:/Player_Footsteps_Walking
   guid: de2aa30f4863bb47a3299496c63210a4
   Banks:
-  - {fileID: -3143921617860471796}
+  - {fileID: 3224631311241806154}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -134,4 +174,4 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 812
-  Exists: 1
+  Exists: 0

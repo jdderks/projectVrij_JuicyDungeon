@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{3fdad5b5-0b4a-4b40-aae0-23e8ccfeb80a}">
+		<property name="assetPath">
+			<value>FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR3_mono.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.59102040816326529</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{cf03ee0c-d1d3-4704-849a-9a00aa1b5642}</destination>
+		</relationship>
+	</object>
+</objects>
