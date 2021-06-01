@@ -148,9 +148,9 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		{
 			agent.isStopped = true;
 
-			yield return new WaitForSeconds( attackSpeed );
-
 			if( Vector3.Distance( transform.position, target.transform.position ) > attackDistance ) SetBehaviour( EnemyState.CHASING );
+
+			yield return new WaitForSeconds( attackSpeed );
 
 			target.GetComponent<IDamageable>()?.TakeDamage( ( int )attackDamage );
 		}
@@ -171,7 +171,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
 			if( Vector3.Distance( transform.position, target.transform.position ) <= attackDistance ) SetBehaviour( EnemyState.ATTACKING );
 
-			yield return new WaitForSeconds( 0.5f );
+			yield return new WaitForSeconds( 0.1f );
 		}
 	}
 

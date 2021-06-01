@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bcf016d6598ac34c9aac01f1c86c0ff, type: 3}
-  m_Name: ScriptableEnemy_Common_1
+  m_Name: ScriptableEnemy_Common_Melee_1
   m_EditorClassIdentifier: 
   type: 0
   targetLayer:
@@ -22,9 +22,9 @@ MonoBehaviour:
   runSpeed: 8
   attackSpeed: 2
   attackDamage: 10
-  attackDistance: 10
+  attackDistance: 2
   targetDetectionRadius: 25
-  targetDetectionInterval: 1
+  targetDetectionInterval: 0.25
   graphics: {fileID: 0}
   deathParticles: {fileID: 0}
   onHitParticles: {fileID: 0}

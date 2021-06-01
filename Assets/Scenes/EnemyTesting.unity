@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2616080243717773917, guid: 34350f6f04ba6354e8cbc2c22372a79c, type: 3}
       propertyPath: m_Name
-      value: Enemy_Common_1
+      value: Enemy_Common_Melee_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34350f6f04ba6354e8cbc2c22372a79c, type: 3}
