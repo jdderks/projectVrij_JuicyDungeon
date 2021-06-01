@@ -77,11 +77,24 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		onHitParticles = scriptableEnemy.onHitParticles;
 
 		// Setup Components
+		Instantiate( prefabObject, transform );
 		anim = GetComponentInChildren<Animator>();
 
 		SetBehaviour( EnemyState.IDLE );
 	}
 
+	/// <summary>
+	/// Updates the Animator Values.
+	/// </summary>
+	public virtual void UpdateAnimator()
+	{
+		anim.SetFloat( "Velocity", agent.velocity.magnitude / walkSpeed );
+	}
+
+	/// <summary>
+	/// Sets the enemy behaviour relative to the current state.
+	/// </summary>
+	/// <param name="_state"> current state. </param>
 	public virtual void SetBehaviour( EnemyState _state )
 	{
 		state = _state;

@@ -8,4 +8,9 @@ public class EnemyBehaviour_Common : EnemyBehaviour
 	{
 		Setup();
 	}
+
+	private void Update()
+	{
+		UpdateAnimator();
+	}
 }

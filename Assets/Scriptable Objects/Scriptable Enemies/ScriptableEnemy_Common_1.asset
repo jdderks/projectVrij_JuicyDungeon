@@ -16,7 +16,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
-  prefabObject: {fileID: 919132149155446097, guid: f9890a6ed8fe86a43847f101325793d0, type: 3}
+  prefabObject: {fileID: 1948329710155509286, guid: 38283d0f2f9588c4a90e9a27a86fdbdc, type: 3}
   health: 100
   walkSpeed: 5
   runSpeed: 8
