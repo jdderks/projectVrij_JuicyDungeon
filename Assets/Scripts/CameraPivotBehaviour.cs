@@ -43,7 +43,6 @@ public class CameraPivotBehaviour : MonoBehaviour
 
     private void LateUpdate()
     {
-        MoveCamera();
         MoveToPosition(player.transform.position, cameraFollowSmoothing);
     }
 
@@ -65,64 +64,4 @@ public class CameraPivotBehaviour : MonoBehaviour
         Gizmos.color = new Color(1f, 1f, 1f, 0.3f);
     }
 
-    private void MoveCamera()
-    {
-        if (useKeyboardInput)
-        {
-            float horizInput = Input.GetAxis(horizontalInputName);
-            float vertInput = Input.GetAxis(verticalInputName);
-
-            Vector3 desiredMove = new Vector3(horizInput, 0, vertInput);
-
-            desiredMove *= keyboardMovementSpeed;
-            desiredMove *= Time.deltaTime;
-            desiredMove = Quaternion.Euler(new Vector3(0f, transform.eulerAngles.y, 0f)) * desiredMove;
-            desiredMove = m_transform.InverseTransformDirection(desiredMove);
-
-            m_transform.Translate(desiredMove, Space.Self);
-        }
-
-        if (useEdgeScrolling)
-        {
-            Vector3 desiredMove = new Vector3();
-
-            Rect leftRect = new Rect(0, 0, screenEdgeBorder, Screen.height);
-            Rect rightRect = new Rect(Screen.width - screenEdgeBorder, 0, screenEdgeBorder, Screen.height);
-            Rect upRect = new Rect(0, Screen.height - screenEdgeBorder, Screen.width, screenEdgeBorder);
-            Rect downRect = new Rect(0, 0, Screen.width, screenEdgeBorder);
-
-            desiredMove.x = leftRect.Contains(Input.mousePosition) ? -1 : rightRect.Contains(Input.mousePosition) ? 1 : 0;
-            desiredMove.z = upRect.Contains(Input.mousePosition) ? 1 : downRect.Contains(Input.mousePosition) ? -1 : 0;
-
-            desiredMove *= edgeScrollingMovementspeed;
-            desiredMove *= Time.deltaTime;
-            desiredMove = Quaternion.Euler(new Vector3(0f, transform.eulerAngles.y, 0f)) * desiredMove;
-            desiredMove = m_transform.InverseTransformDirection(desiredMove);
-
-            m_transform.Translate(desiredMove, Space.Self);
-        }
-    }
-
-    //DoubleClick behaviour
-    private bool DoubleClick()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            clickCounter++;
-            if (clickCounter == 1) firstClickTime = Time.time;
-        }
-        if (Time.time - firstClickTime < timeBetweenClicks)
-        {
-            if (clickCounter > 1)
-            {
-                return true;
-            }
-        }
-        else
-        {
-            clickCounter = 0;
-            firstClickTime = 0;
-        }
-        return false;
-    }
 }
