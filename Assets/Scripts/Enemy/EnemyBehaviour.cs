@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using NaughtyAttributes;
+using UnityEditor;
 
 public enum EnemyState
 {
@@ -28,11 +29,17 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	[Foldout( "Enemy Stats" )] public float walkSpeed;
 	[Foldout( "Enemy Stats" )] public float runSpeed;
 	[Space]
+	[Foldout( "Enemy Stats" )] public float wanderIntervalMIN;
+	[Foldout( "Enemy Stats" )] public float wanderIntervalMAX;
+	[Foldout( "Enemy Stats" )] public float wanderRadius;
+	[Space]
 	[Foldout( "Enemy Stats" )] public float attackSpeed;
 	[Foldout( "Enemy Stats" )] public float attackDamage;
+	[Foldout( "Enemy Stats" )] public float attackDistance;
 	[Space]
 	[Foldout( "Enemy Stats" )] public float targetDetectionRadius;
 	[Foldout( "Enemy Stats" )] public float targetDetectionInterval;
+	[Foldout( "Enemy Stats" )] public float targetMaxChaseDistance;
 	[Space]
 	[Foldout( "Enemy Stats" )] public GameObject graphics;
 	[Foldout( "Enemy Stats" )] public GameObject deathParticles;
@@ -40,6 +47,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	#endregion
 
 	#region Runtime Variables
+	[SerializeField] private Vector3 startingPos = Vector3.zero;
 	[SerializeField] private bool targetAcquired = false;
 	[SerializeField] private GameObject target;
 	[Space]
@@ -63,19 +71,78 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		walkSpeed = scriptableEnemy.walkSpeed;
 		runSpeed = scriptableEnemy.runSpeed;
 
+		wanderIntervalMIN = scriptableEnemy.wanderIntervalMIN;
+		wanderIntervalMAX = scriptableEnemy.wanderIntervalMAX;
+		wanderRadius = scriptableEnemy.wanderRadius;
+
 		attackSpeed = scriptableEnemy.attackSpeed;
 		attackDamage = scriptableEnemy.attackDamage;
+		attackDistance = scriptableEnemy.attackDistance;
 
 		targetDetectionRadius = scriptableEnemy.targetDetectionRadius;
 		targetDetectionInterval = scriptableEnemy.targetDetectionInterval;
+		targetMaxChaseDistance = scriptableEnemy.targetMaxChaseDistance;
 
 		graphics = scriptableEnemy.graphics;
 		deathParticles = scriptableEnemy.deathParticles;
 		onHitParticles = scriptableEnemy.onHitParticles;
 
-		// Setup Prefab Object
-		Instantiate( prefabObject, transform );
+		// Setup Components
+		Instantiate( prefabObject, transform.position, Quaternion.identity, transform );
 		anim = GetComponentInChildren<Animator>();
+
+		SetBehaviour( EnemyState.IDLE );
+		SetBehaviour( EnemyState.WANDERING );
+	}
+
+	public virtual void SetPosition( Vector3 pos )
+	{
+		agent.enabled = false;
+		transform.position = pos;
+		startingPos = pos;
+		agent.enabled = true;
+	}
+
+	/// <summary>
+	/// Updates the Animator Values.
+	/// </summary>
+	public virtual void UpdateAnimator()
+	{
+		anim.SetFloat( "Velocity", agent.velocity.magnitude / walkSpeed );
+	}
+
+	/// <summary>
+	/// Sets the enemy behaviour relative to the current state.
+	/// </summary>
+	/// <param name="_state"> current state. </param>
+	public virtual void SetBehaviour( EnemyState _state )
+	{
+		state = _state;
+
+		switch( state )
+		{
+			case EnemyState.IDLE:
+				StartCoroutine( DetectTarget() );
+				break;
+
+			case EnemyState.WANDERING:
+				StartCoroutine( Wander() );
+				break;
+
+			case EnemyState.CHASING:
+				StartCoroutine( ChaseTarget() );
+				break;
+
+			case EnemyState.ATTACKING:
+				StartCoroutine( AttackTarget() );
+				break;
+
+			case EnemyState.DEAD:
+				break;
+
+			default:
+				break;
+		}
 	}
 
 	/// <summary>
@@ -92,14 +159,62 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		}
 	}
 
-	/// <summary>
-	/// A Virtual Voide of the MoveToTargetLoop Method.
-	/// </summary>
-	public virtual void MoveToTarget()
+	private void ReturnToStartingPos()
 	{
-		state = EnemyState.CHASING;
+		agent.destination = startingPos;
+	}
 
-		StartCoroutine( MoveToTargetLoop() );
+	private IEnumerator Wander()
+	{
+		while( state == EnemyState.WANDERING )
+		{
+			NavMeshPath path = new NavMeshPath();
+			Vector3 pathDestination = new Vector3
+			{
+				x = Random.Range( transform.position.x - wanderRadius, transform.position.x + wanderRadius ),
+				y = transform.position.y,
+				z = Random.Range( transform.position.z - wanderRadius, transform.position.z + wanderRadius )
+			};
+
+			agent.CalculatePath( pathDestination, path );
+
+			if( path.status == NavMeshPathStatus.PathComplete )
+			{
+				agent.SetPath( path );
+			}
+			else
+			{
+				Debug.Log( "Invalid Path! Waiting for interval" );
+			}
+
+			yield return new WaitForSeconds( Random.Range( wanderIntervalMIN, wanderIntervalMAX ) );
+		}
+	}
+
+	/// <summary>
+	/// The Attack loop. The first attack will have to yield at first to remove the possibility of enemies spam attacking the player upon moving.
+	/// </summary>
+	/// <returns></returns>
+	private IEnumerator AttackTarget()
+	{
+		while( state == EnemyState.ATTACKING )
+		{
+			agent.isStopped = true;
+
+			if( Vector3.Distance( transform.position, target.transform.position ) > attackDistance )
+			{
+				anim.SetBool( "Melee Attack", false );
+				SetBehaviour( EnemyState.CHASING );
+			}
+			else
+			{
+				anim.SetBool( "Melee Attack", true );
+			}
+
+			target.GetComponent<IDamageable>()?.TakeDamage( ( int )attackDamage );
+
+			yield return new WaitForSeconds( attackSpeed );
+		}
 	}
 
 	/// <summary>
@@ -107,22 +222,28 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// The destination gets set every 0.5 seconds as to avoid spamming the agent with commands.
 	/// </summary>
 	/// <returns></returns>
-	private IEnumerator MoveToTargetLoop()
+	private IEnumerator ChaseTarget()
 	{
 		while( state == EnemyState.CHASING )
 		{
-			if( target != null ) agent.destination = target.transform.position;
+			agent.isStopped = false;
 
-			yield return new WaitForSeconds( 0.5f );
+			if( target != null )
+			{
+				agent.destination = target.transform.position;
+			}
+			if( Vector3.Distance( transform.position, target.transform.position ) >= targetMaxChaseDistance )
+			{
+				SetBehaviour( EnemyState.IDLE );
+				ReturnToStartingPos();
+			}
+			if( Vector3.Distance( transform.position, target.transform.position ) <= attackDistance )
+			{
+				SetBehaviour( EnemyState.ATTACKING );
+			}
+
+			yield return new WaitForSeconds( 0.1f );
 		}
-	}
-
-	/// <summary>
-	/// A Virtual Void of the DetectTargetLoop Method.
-	/// </summary>
-	public virtual void DetectTarget()
-	{
-		StartCoroutine( DetectTargetLoop() );
 	}
 
 	/// <summary>
@@ -130,7 +251,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// It then loops through all colliders to see which one is the nearest one.
 	/// </summary>
 	/// <returns></returns>
-	private IEnumerator DetectTargetLoop()
+	private IEnumerator DetectTarget()
 	{
 		while( !targetAcquired )
 		{
@@ -151,8 +272,18 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 			}
 
 			if( nearestTransform == null ) targetAcquired = false;
+			else SetBehaviour( EnemyState.CHASING );
 
 			yield return new WaitForSeconds( targetDetectionInterval );
 		}
+	}
+
+	private void OnDrawGizmos()
+	{
+		Handles.color = Color.red;
+		Handles.DrawWireDisc( transform.position, Vector3.up, targetDetectionRadius );
+
+		Handles.color = Color.blue;
+		Handles.DrawWireDisc( transform.position, Vector3.up, attackDistance );
 	}
 }

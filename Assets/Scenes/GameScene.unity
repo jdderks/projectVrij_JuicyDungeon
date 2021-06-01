@@ -333,7 +333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Seed: 283296463'
+  m_text: 'Seed: 1356676337'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.25
+  m_fontSize: 23.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -778,8 +778,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c14787402e41f14689aadfe1bf88de2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomizeSeed: 1
-  seed: 283296463
+  randomizeSeed: 0
+  seed: 1354486625
   roomParentTransform: {fileID: 1654244612}
   minRoomSize: {x: 9, y: 9}
   maxRoomSize: {x: 15, y: 15}

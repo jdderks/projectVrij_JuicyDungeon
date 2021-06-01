@@ -141,5 +141,15 @@ public class PlayerController : MonoBehaviour
 //            currentRollSpeed = rollSpeed;
 ////		}
     }
+
+    public void PlayRunningAudio()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot( "event:/Player_Footsteps_Running", transform.position );
+	}
+
+    public void PlayWalkingAudio()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot( "event:/Player_Footsteps_Walking", transform.position );
+    }
 }
 
