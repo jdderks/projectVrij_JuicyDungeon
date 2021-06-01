@@ -828,9 +828,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8620861436239876521}
+  - component: {fileID: 7253695275268239887}
   - component: {fileID: 2396863989977762771}
   - component: {fileID: 8082213865473734236}
-  - component: {fileID: 7253695275268239887}
   m_Layer: 6
   m_Name: character
   m_TagString: Untagged
@@ -854,6 +854,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7253695275268239887
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000623494827952915}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.14173645
+  m_Height: 1.6598185
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8845759, z: 0.011005282}
 --- !u!95 &2396863989977762771
 Animator:
   serializedVersion: 3
@@ -893,17 +907,3 @@ MonoBehaviour:
   rollDistance: 1
   rollSpeed: 100
   cameraTransform: {fileID: 0}
---- !u!136 &7253695275268239887
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9000623494827952915}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.14173645
-  m_Height: 1.6598185
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.8845759, z: 0.011005282}

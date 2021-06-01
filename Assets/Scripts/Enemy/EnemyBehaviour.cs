@@ -29,7 +29,8 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	[Foldout( "Enemy Stats" )] public float walkSpeed;
 	[Foldout( "Enemy Stats" )] public float runSpeed;
 	[Space]
-	[Foldout( "Enemy Stats" )] public float wanderInterval;
+	[Foldout( "Enemy Stats" )] public float wanderIntervalMIN;
+	[Foldout( "Enemy Stats" )] public float wanderIntervalMAX;
 	[Foldout( "Enemy Stats" )] public float wanderRadius;
 	[Space]
 	[Foldout( "Enemy Stats" )] public float attackSpeed;
@@ -38,6 +39,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	[Space]
 	[Foldout( "Enemy Stats" )] public float targetDetectionRadius;
 	[Foldout( "Enemy Stats" )] public float targetDetectionInterval;
+	[Foldout( "Enemy Stats" )] public float targetMaxChaseDistance;
 	[Space]
 	[Foldout( "Enemy Stats" )] public GameObject graphics;
 	[Foldout( "Enemy Stats" )] public GameObject deathParticles;
@@ -45,6 +47,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	#endregion
 
 	#region Runtime Variables
+	[SerializeField] private Vector3 startingPos = Vector3.zero;
 	[SerializeField] private bool targetAcquired = false;
 	[SerializeField] private GameObject target;
 	[Space]
@@ -68,7 +71,8 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		walkSpeed = scriptableEnemy.walkSpeed;
 		runSpeed = scriptableEnemy.runSpeed;
 
-		wanderInterval = scriptableEnemy.wanderInterval;
+		wanderIntervalMIN = scriptableEnemy.wanderIntervalMIN;
+		wanderIntervalMAX = scriptableEnemy.wanderIntervalMAX;
 		wanderRadius = scriptableEnemy.wanderRadius;
 
 		attackSpeed = scriptableEnemy.attackSpeed;
@@ -77,17 +81,26 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
 		targetDetectionRadius = scriptableEnemy.targetDetectionRadius;
 		targetDetectionInterval = scriptableEnemy.targetDetectionInterval;
+		targetMaxChaseDistance = scriptableEnemy.targetMaxChaseDistance;
 
 		graphics = scriptableEnemy.graphics;
 		deathParticles = scriptableEnemy.deathParticles;
 		onHitParticles = scriptableEnemy.onHitParticles;
 
 		// Setup Components
-		Instantiate( prefabObject, transform );
+		Instantiate( prefabObject, transform.position, Quaternion.identity, transform );
 		anim = GetComponentInChildren<Animator>();
 
 		SetBehaviour( EnemyState.IDLE );
 		SetBehaviour( EnemyState.WANDERING );
+	}
+
+	public virtual void SetPosition( Vector3 pos )
+	{
+		agent.enabled = false;
+		transform.position = pos;
+		startingPos = pos;
+		agent.enabled = true;
 	}
 
 	/// <summary>
@@ -146,6 +159,11 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		}
 	}
 
+	private void ReturnToStartingPos()
+	{
+		agent.destination = startingPos;
+	}
+
 	private IEnumerator Wander()
 	{
 		while( state == EnemyState.WANDERING )
@@ -169,7 +187,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 				Debug.Log( "Invalid Path! Waiting for interval" );
 			}
 
-			yield return new WaitForSeconds( wanderInterval );
+			yield return new WaitForSeconds( Random.Range( wanderIntervalMIN, wanderIntervalMAX ) );
 		}
 	}
 
@@ -210,9 +228,19 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		{
 			agent.isStopped = false;
 
-			if( target != null ) agent.destination = target.transform.position;
-
-			if( Vector3.Distance( transform.position, target.transform.position ) <= attackDistance ) SetBehaviour( EnemyState.ATTACKING );
+			if( target != null )
+			{
+				agent.destination = target.transform.position;
+			}
+			if( Vector3.Distance( transform.position, target.transform.position ) >= targetMaxChaseDistance )
+			{
+				SetBehaviour( EnemyState.IDLE );
+				ReturnToStartingPos();
+			}
+			if( Vector3.Distance( transform.position, target.transform.position ) <= attackDistance )
+			{
+				SetBehaviour( EnemyState.ATTACKING );
+			}
 
 			yield return new WaitForSeconds( 0.1f );
 		}

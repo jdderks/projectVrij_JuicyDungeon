@@ -19,15 +19,17 @@ public class ScriptableEnemyObject : ScriptableObject
 	public float walkSpeed = 5;
 	public float runSpeed = 9;
 	[Space]
-	public float wanderInterval = 10;
+	public float wanderIntervalMIN = 5;
+	public float wanderIntervalMAX = 10;
 	public float wanderRadius = 5;
 	[Space]
 	public float attackSpeed = 2;
 	public float attackDamage = 10;
 	public float attackDistance = 2;
 	[Space]
-	public float targetDetectionRadius = 15;
+	public float targetDetectionRadius = 10;
 	public float targetDetectionInterval = 1;
+	public float targetMaxChaseDistance = 15;
 	[Space]
 	public GameObject graphics = default;
 	public GameObject deathParticles = default;

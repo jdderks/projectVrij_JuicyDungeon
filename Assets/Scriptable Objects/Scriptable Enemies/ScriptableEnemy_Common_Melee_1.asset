@@ -20,11 +20,15 @@ MonoBehaviour:
   health: 100
   walkSpeed: 5
   runSpeed: 8
+  wanderIntervalMIN: 5
+  wanderIntervalMAX: 10
+  wanderRadius: 5
   attackSpeed: 2
   attackDamage: 10
   attackDistance: 2
-  targetDetectionRadius: 25
+  targetDetectionRadius: 15
   targetDetectionInterval: 0.25
+  targetMaxChaseDistance: 20
   graphics: {fileID: 0}
   deathParticles: {fileID: 0}
   onHitParticles: {fileID: 0}

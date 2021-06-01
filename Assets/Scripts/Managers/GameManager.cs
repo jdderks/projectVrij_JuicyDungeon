@@ -34,8 +34,6 @@ public class GameManager : MonoBehaviour
 		dungeonGenerator.GenerateDungeon();
 
 		InstantiatePlayerInstance();
-
-		//BakeNavMesh();
 	}
 
 	private void InstantiatePlayerInstance()
