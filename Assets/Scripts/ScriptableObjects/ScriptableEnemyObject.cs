@@ -19,6 +19,9 @@ public class ScriptableEnemyObject : ScriptableObject
 	public float walkSpeed = 5;
 	public float runSpeed = 9;
 	[Space]
+	public float wanderInterval = 10;
+	public float wanderRadius = 5;
+	[Space]
 	public float attackSpeed = 2;
 	public float attackDamage = 10;
 	public float attackDistance = 2;

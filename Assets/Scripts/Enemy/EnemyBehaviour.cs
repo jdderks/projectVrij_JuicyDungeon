@@ -29,6 +29,9 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	[Foldout( "Enemy Stats" )] public float walkSpeed;
 	[Foldout( "Enemy Stats" )] public float runSpeed;
 	[Space]
+	[Foldout( "Enemy Stats" )] public float wanderInterval;
+	[Foldout( "Enemy Stats" )] public float wanderRadius;
+	[Space]
 	[Foldout( "Enemy Stats" )] public float attackSpeed;
 	[Foldout( "Enemy Stats" )] public float attackDamage;
 	[Foldout( "Enemy Stats" )] public float attackDistance;
@@ -65,6 +68,9 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		walkSpeed = scriptableEnemy.walkSpeed;
 		runSpeed = scriptableEnemy.runSpeed;
 
+		wanderInterval = scriptableEnemy.wanderInterval;
+		wanderRadius = scriptableEnemy.wanderRadius;
+
 		attackSpeed = scriptableEnemy.attackSpeed;
 		attackDamage = scriptableEnemy.attackDamage;
 		attackDistance = scriptableEnemy.attackDistance;
@@ -81,6 +87,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		anim = GetComponentInChildren<Animator>();
 
 		SetBehaviour( EnemyState.IDLE );
+		SetBehaviour( EnemyState.WANDERING );
 	}
 
 	/// <summary>
@@ -106,6 +113,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 				break;
 
 			case EnemyState.WANDERING:
+				StartCoroutine( Wander() );
 				break;
 
 			case EnemyState.CHASING:
@@ -135,6 +143,33 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		if( health <= 0 )
 		{
 			state = EnemyState.DEAD;
+		}
+	}
+
+	private IEnumerator Wander()
+	{
+		while( state == EnemyState.WANDERING )
+		{
+			NavMeshPath path = new NavMeshPath();
+			Vector3 pathDestination = new Vector3
+			{
+				x = Random.Range( transform.position.x - wanderRadius, transform.position.x + wanderRadius ),
+				y = transform.position.y,
+				z = Random.Range( transform.position.z - wanderRadius, transform.position.z + wanderRadius )
+			};
+
+			agent.CalculatePath( pathDestination, path );
+
+			if( path.status == NavMeshPathStatus.PathComplete )
+			{
+				agent.SetPath( path );
+			}
+			else
+			{
+				Debug.Log( "Invalid Path! Waiting for interval" );
+			}
+
+			yield return new WaitForSeconds( wanderInterval );
 		}
 	}
 
