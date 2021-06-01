@@ -148,11 +148,19 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		{
 			agent.isStopped = true;
 
-			if( Vector3.Distance( transform.position, target.transform.position ) > attackDistance ) SetBehaviour( EnemyState.CHASING );
-
-			yield return new WaitForSeconds( attackSpeed );
+			if( Vector3.Distance( transform.position, target.transform.position ) > attackDistance )
+			{
+				anim.SetBool( "Melee Attack", false );
+				SetBehaviour( EnemyState.CHASING );
+			}
+			else
+			{
+				anim.SetBool( "Melee Attack", true );
+			}
 
 			target.GetComponent<IDamageable>()?.TakeDamage( ( int )attackDamage );
+
+			yield return new WaitForSeconds( attackSpeed );
 		}
 	}
 
