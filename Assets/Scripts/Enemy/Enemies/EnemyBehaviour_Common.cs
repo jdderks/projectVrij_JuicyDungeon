@@ -7,7 +7,5 @@ public class EnemyBehaviour_Common : EnemyBehaviour
 	private void Start()
 	{
 		Setup();
-		DetectTarget();
-		MoveToTarget();
 	}
 }

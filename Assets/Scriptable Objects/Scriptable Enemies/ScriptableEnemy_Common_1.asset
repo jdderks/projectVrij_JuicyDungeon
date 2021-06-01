@@ -22,8 +22,8 @@ MonoBehaviour:
   runSpeed: 8
   attackSpeed: 2
   attackDamage: 10
-  attackDistance: 2
-  targetDetectionRadius: 15
+  attackDistance: 10
+  targetDetectionRadius: 25
   targetDetectionInterval: 1
   graphics: {fileID: 0}
   deathParticles: {fileID: 0}
