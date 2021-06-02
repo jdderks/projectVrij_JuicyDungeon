@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Player_Footsteps_Running
   guid: 9d234e5e91cea2429a064c742ba43fa0
-  Banks:
-  - {fileID: 3224631311241806154}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -60,15 +59,38 @@ MonoBehaviour:
   - {fileID: 4430748411869207155}
   - {fileID: 3224631311241806154}
   EditorEvents:
-  - {fileID: -4392097224166631365}
-  - {fileID: 5558411858782488959}
+  - {fileID: 1105188044391895931}
+  - {fileID: 8784209001674203115}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3224631311241806154}
   StringsBanks:
   - {fileID: 4430748411869207155}
-  stringsBankWriteTime: 637581724730244758
+  stringsBankWriteTime: 637581771261581386
   cacheVersion: 6
+--- !u!114 &1105188044391895931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Locomotion/Player_Footsteps_Running
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Locomotion/Player_Footsteps_Running
+  guid: 9d234e5e91cea2429a064c742ba43fa0
+  Banks:
+  - {fileID: 3224631311241806154}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &3224631311241806154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +106,7 @@ MonoBehaviour:
   Path: FMOD_Project/ProjectVrij2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637581724730219952
+  lastModified: 637581771261571413
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -125,11 +147,11 @@ MonoBehaviour:
   Path: FMOD_Project/ProjectVrij2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637581724730244758
+  lastModified: 637581771261581386
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 812
+    Value: 830
   Exists: 1
 --- !u!114 &5558411858782488959
 MonoBehaviour:
@@ -145,8 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Player_Footsteps_Walking
   guid: de2aa30f4863bb47a3299496c63210a4
-  Banks:
-  - {fileID: 3224631311241806154}
+  Banks: []
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -175,3 +196,26 @@ MonoBehaviour:
   - Name: Desktop
     Value: 812
   Exists: 0
+--- !u!114 &8784209001674203115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Locomotion/Player_Footsteps_Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Locomotion/Player_Footsteps_Walking
+  guid: de2aa30f4863bb47a3299496c63210a4
+  Banks:
+  - {fileID: 3224631311241806154}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0

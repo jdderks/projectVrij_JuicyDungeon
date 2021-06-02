@@ -3,7 +3,42 @@ guid: bf3194e71d2255a49832e48af9f975ec
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CliffSide
+    second: {fileID: 2100000, guid: 8fc36cf388566c749b33b85dfa96bccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 44e240a7449f5be46a8db7a0ec8c4a91, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATT_Pillar
+    second: {fileID: 2100000, guid: 66ddee9239c9139448d65d7770e8f046, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATT_RuinsWall_B
+    second: {fileID: 2100000, guid: c3d749d2043aa0847904e677b0093ddd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATT_SlimWall
+    second: {fileID: 2100000, guid: 35cbffd95a34457488e4ef497615c615, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATT_Stukko
+    second: {fileID: 2100000, guid: ce71a60b3c76fee4da3c9e16b6f9901c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MATT_TopFloor
+    second: {fileID: 2100000, guid: c961779b97e12e6449fbfef4a816a421, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

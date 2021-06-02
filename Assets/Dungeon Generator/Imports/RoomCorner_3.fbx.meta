@@ -3,7 +3,17 @@ guid: 6e7d6f0f3e74df24d9abdcee785b5a77
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CliffSide
+    second: {fileID: 2100000, guid: 8fc36cf388566c749b33b85dfa96bccb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor
+    second: {fileID: 2100000, guid: 44e240a7449f5be46a8db7a0ec8c4a91, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

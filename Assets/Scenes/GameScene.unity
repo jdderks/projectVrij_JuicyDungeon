@@ -790,18 +790,20 @@ MonoBehaviour:
   maxPathwayLength: 18
   tileSize: 4
   tileGroundObjects:
-  - {fileID: 3789371141217080329, guid: 5171a01ea1857184a83e64d4db49973f, type: 3}
+  - {fileID: 1282623024042879559, guid: 5171a01ea1857184a83e64d4db49973f, type: 3}
   tileWallObjects:
-  - {fileID: 7536778094287858075, guid: 458a54c840929914591c25db10764174, type: 3}
-  - {fileID: 7257449836131287646, guid: 4966947ecbaf61640ae6d34e123288e5, type: 3}
-  - {fileID: 2369964104515019545, guid: 2c01268cfc67cc54c8765c76ad535725, type: 3}
+  - {fileID: 5315288260562704237, guid: 458a54c840929914591c25db10764174, type: 3}
+  - {fileID: 3665793422997279025, guid: 4966947ecbaf61640ae6d34e123288e5, type: 3}
+  - {fileID: 4717136764174701565, guid: 2c01268cfc67cc54c8765c76ad535725, type: 3}
   tileOuterCornerObjects:
-  - {fileID: 8544059649360350577, guid: a94f3028bbdae9a45b92a6e9fef0c1d7, type: 3}
-  - {fileID: 2983476587519573875, guid: 1423edaf462dc204093d17cc3e11207e, type: 3}
-  - {fileID: 955607820838939252, guid: 7d63f36b9be4b96459979388c0d058a3, type: 3}
-  - {fileID: 2574466925633982724, guid: 0166328106318dd428bd97d790cff510, type: 3}
+  - {fileID: 3010554082082573183, guid: a94f3028bbdae9a45b92a6e9fef0c1d7, type: 3}
+  - {fileID: 9010890182273801703, guid: 1423edaf462dc204093d17cc3e11207e, type: 3}
+  - {fileID: 8072676330110920164, guid: 0432b689808f7894daad4287d5f40ce3, type: 3}
+  - {fileID: 6817381478230725933, guid: 7d63f36b9be4b96459979388c0d058a3, type: 3}
+  - {fileID: 5595662475233550025, guid: 0166328106318dd428bd97d790cff510, type: 3}
+  - {fileID: 7142743677331482491, guid: 076df6d2595c29d428de24cef0f97fe7, type: 3}
   tileInnerCornerObjects:
-  - {fileID: 3789371141217080329, guid: 5171a01ea1857184a83e64d4db49973f, type: 3}
+  - {fileID: 4166063582966789095, guid: b5a06808777416a4483b46ea4022c776, type: 3}
   enemyParentTransform: {fileID: 0}
   enemyLists:
   - name: Common
