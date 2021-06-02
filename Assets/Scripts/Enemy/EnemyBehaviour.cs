@@ -173,10 +173,11 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
     public virtual void TakeDamage(int damage)
     {
         health -= damage;
-
+        Debug.Log("Ouch");
         if (health <= 0)
         {
             state = EnemyState.DEAD;
+            Destroy(gameObject);
         }
     }
 

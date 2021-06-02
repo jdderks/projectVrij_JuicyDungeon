@@ -920,3 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db786ab28119da44fb30967b572bdc47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  arrow: {fileID: 3967245574977963899, guid: 7b47abe897c44a042a09628aa94a27ed, type: 3}
+  arrowSpeed: 2000
+  arrowSpawnHeight: 1.2

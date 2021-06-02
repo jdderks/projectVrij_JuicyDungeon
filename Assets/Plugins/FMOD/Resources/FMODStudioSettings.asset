@@ -335,8 +335,8 @@ MonoBehaviour:
   SwitchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: F:/Google Drive/HKU/Jaar2/Blok4/Project Vrij 2/FMOD_Project/ProjectVrij2/ProjectVrij2.fspro
-  sourceBankPath: F:/Google Drive/HKU/Jaar2/Blok4/Project Vrij 2/FMOD_Project/ProjectVrij2/Build
+  sourceProjectPath: C:/Users/j_d_d/Desktop/FMOD_Project/ProjectVrij2/ProjectVrij2.fspro
+  sourceBankPath: C:/Users/j_d_d/Desktop/FMOD_Project/ProjectVrij2/Build
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 1
   ShowBankRefreshWindow: 0

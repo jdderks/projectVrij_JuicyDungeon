@@ -184,25 +184,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8458b6df614cfbc4884af1975f71ec3a, type: 3}
---- !u!1 &895113210 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 428423872028328900, guid: 8458b6df614cfbc4884af1975f71ec3a, type: 3}
-  m_PrefabInstance: {fileID: 419925201}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &895113212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895113210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
-  ListenerNumber: -1
 --- !u!1 &902697457
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,6 +348,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6181674849630969202, guid: a97838ff51547b94b88659ae6761eb70, type: 3}
+      propertyPath: arrowSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6181674849630969202, guid: a97838ff51547b94b88659ae6761eb70, type: 3}
+      propertyPath: arrowSpawnPosition
+      value: 
+      objectReference: {fileID: 1715370297}
     - target: {fileID: 8082213865473734236, guid: a97838ff51547b94b88659ae6761eb70, type: 3}
       propertyPath: cameraTransform
       value: 
@@ -424,6 +413,11 @@ PrefabInstance:
 --- !u!1 &1707973916 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9000623494827952915, guid: a97838ff51547b94b88659ae6761eb70, type: 3}
+  m_PrefabInstance: {fileID: 1707973915}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1715370297 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6658587640357801415, guid: a97838ff51547b94b88659ae6761eb70, type: 3}
   m_PrefabInstance: {fileID: 1707973915}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1737340799 stripped

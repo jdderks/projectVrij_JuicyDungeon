@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 428423871279179255}
-  m_LocalRotation: {x: 0.300982, y: 0.37073866, z: -0.12837973, w: 0.8691843}
+  m_LocalRotation: {x: 0.30098206, y: 0.37073857, z: -0.12837973, w: 0.8691844}
   m_LocalPosition: {x: 9.831588, y: 1.272, z: 7.996471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 428423872028328907}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 38.2, y: 46.2, z: 0}
 --- !u!114 &428423871279179254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 428423872028328911}
   - component: {fileID: 428423872028328905}
   - component: {fileID: 428423872028328906}
-  - component: {fileID: 506985484509038345}
+  - component: {fileID: 895113212}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -185,7 +185,7 @@ MonoBehaviour:
   zoomDistance: 10
   CameraDisabled: 1
   lockKey: 0
---- !u!114 &506985484509038345
+--- !u!114 &895113212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
