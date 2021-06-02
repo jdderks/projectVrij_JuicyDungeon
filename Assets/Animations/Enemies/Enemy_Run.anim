@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Armature_Run
+  m_Name: Enemy_Run
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20696,7 +20696,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.29166666
-    functionName: PlayWalkingAudio
+    functionName: PlayRunningAudio
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

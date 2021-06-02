@@ -5,7 +5,7 @@
 			<value>Player_Footsteps_Walking</value>
 		</property>
 		<property name="outputFormat">
-			<value>0</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{79bbe80b-ab40-4fd4-854f-f556c9a2d065}</destination>
@@ -118,10 +118,21 @@
 	<object class="MixerBusEffectChain" id="{9a7a5fac-bb8a-4e57-9807-963905d32b43}">
 		<relationship name="effects">
 			<destination>{28ab4a14-af7b-4563-a9d4-882ea5848d53}</destination>
+			<destination>{8482e9ad-dafb-434c-982b-661eac40069e}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{3c5b34da-ad27-48f0-816d-bea75bef2afb}" />
+	<object class="MixerBusPanner" id="{3c5b34da-ad27-48f0-816d-bea75bef2afb}">
+		<property name="surroundLFELevel">
+			<value>-5.5</value>
+		</property>
+	</object>
 	<object class="MultiSound" id="{7eadfbba-0428-47bd-ab54-bbba5ff651d7}">
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{6f51a2ee-8abb-4090-bf44-d33a8548b81f}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{b56ae46f-51a0-479e-8115-fd8f541aaa45}</destination>
 			<destination>{3e1cc419-b5c0-415d-a83c-49b5acafb365}</destination>
@@ -141,6 +152,15 @@
 	</object>
 	<object class="MixerBusPanner" id="{080eb3fa-554a-4afd-89a7-5038c10e8e14}" />
 	<object class="MixerBusFader" id="{28ab4a14-af7b-4563-a9d4-882ea5848d53}" />
+	<object class="SpatialiserEffect" id="{8482e9ad-dafb-434c-982b-661eac40069e}" />
+	<object class="RandomizerModulator" id="{6f51a2ee-8abb-4090-bf44-d33a8548b81f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>8</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{b56ae46f-51a0-479e-8115-fd8f541aaa45}">
 		<relationship name="audioFile">
 			<destination>{1dc4263d-c192-4a4c-85a2-85a21ca2c997}</destination>

@@ -88,7 +88,24 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		onHitParticles = scriptableEnemy.onHitParticles;
 
 		// Setup Components
-		Instantiate( prefabObject, transform.position, Quaternion.identity, transform );
+		//GameObject prefabObjectInstance = Instantiate( prefabObject, transform.position, Quaternion.identity, transform );
+		//switch( type )
+		//{
+		//	case EnemyType.Common:
+		//		prefabObjectInstance.transform.localScale = Vector3.one;
+		//		break;
+		//	case EnemyType.Elite:
+		//		prefabObjectInstance.transform.localScale = new Vector3( 1.5f, 1.5f, 1.5f );
+		//		break;
+		//	case EnemyType.Legendary:
+		//		prefabObjectInstance.transform.localScale = new Vector3( 2.5f, 2.5f, 2.5f );
+		//		break;
+		//	case EnemyType.Boss:
+		//		break;
+		//	default:
+		//		break;
+		//}
+
 		anim = GetComponentInChildren<Animator>();
 
 		SetBehaviour( EnemyState.IDLE );
@@ -275,6 +292,28 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 			else SetBehaviour( EnemyState.CHASING );
 
 			yield return new WaitForSeconds( targetDetectionInterval );
+		}
+	}
+
+	public void PlayRunningAudio()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Locomotion/Enemy_Footsteps_Running", transform.position );
+	}
+
+	public void PlayWalkingAudio()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Locomotion/Enemy_Footsteps_Walking", transform.position );
+	}
+
+	public void PlaySwordSwingAudio()
+	{
+		if( Vector3.Distance( target.transform.position, transform.position ) <= attackDistance )
+		{
+			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Attacks/Melee/Enemy_Sword_Hit", transform.position );
+		}
+		else
+		{
+			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Attacks/Melee/Enemy_Sword_Miss", transform.position );
 		}
 	}
 
