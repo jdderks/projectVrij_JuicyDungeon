@@ -705,28 +705,28 @@ namespace DungeonGenerationPathFirst
 				{
 					tile.Type = TileType.INNER_CORNER;
 					tile.Graphic = tileInnerCornerObjects[Random.Range( 0, tileInnerCornerObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, -90, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 0, 0 );
 				}
 				// Top Right Inner Corner
 				if( leftTile != null && topLeftTile != null && rightTile != null && topRightTile == null && bottomLeftTile != null && bottomRightTile != null && topTile != null && bottomTile != null )
 				{
 					tile.Type = TileType.INNER_CORNER;
 					tile.Graphic = tileInnerCornerObjects[Random.Range( 0, tileInnerCornerObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, 0, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 90, 0 );
 				}
 				// Bottom Left Inner Corner
 				if( leftTile != null && topLeftTile != null && rightTile != null && topRightTile != null && bottomLeftTile == null && bottomRightTile != null && topTile != null && bottomTile != null )
 				{
 					tile.Type = TileType.INNER_CORNER;
 					tile.Graphic = tileInnerCornerObjects[Random.Range( 0, tileInnerCornerObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, -180, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, -90, 0 );
 				}
 				// Bottom Right Inner Corner
 				if( leftTile != null && topLeftTile != null && rightTile != null && topRightTile != null && bottomLeftTile != null && bottomRightTile == null && topTile != null && bottomTile != null )
 				{
 					tile.Type = TileType.INNER_CORNER;
 					tile.Graphic = tileInnerCornerObjects[Random.Range( 0, tileInnerCornerObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, 90, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, -180, 0 );
 				}
 
 				//#####################\\

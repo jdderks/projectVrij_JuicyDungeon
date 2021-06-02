@@ -111,6 +111,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 82816
   Exists: 0
+--- !u!114 &-2244106804101193270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
+  guid: 64575956e01bdc4fa9f88a4afb67281d
+  Banks:
+  - {fileID: 3224631311241806154}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,12 +155,13 @@ MonoBehaviour:
   - {fileID: 1625669592650855028}
   - {fileID: -5866373710660286372}
   - {fileID: 5951124978485262869}
+  - {fileID: -2244106804101193270}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3224631311241806154}
   StringsBanks:
   - {fileID: 4430748411869207155}
-  stringsBankWriteTime: 637582316193524272
+  stringsBankWriteTime: 637582322312059769
   cacheVersion: 6
 --- !u!114 &1625669592650855028
 MonoBehaviour:
@@ -177,7 +201,7 @@ MonoBehaviour:
   Path: FMOD_Project/ProjectVrij2/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637582316193489565
+  lastModified: 637582322275802660
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -218,11 +242,11 @@ MonoBehaviour:
   Path: FMOD_Project/ProjectVrij2/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637582316193524272
+  lastModified: 637582322312059769
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1034
+    Value: 1082
   Exists: 1
 --- !u!114 &5558411858782488959
 MonoBehaviour:

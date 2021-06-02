@@ -89,22 +89,26 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
 		// Setup Components
 		//GameObject prefabObjectInstance = Instantiate( prefabObject, transform.position, Quaternion.identity, transform );
-		//switch( type )
-		//{
-		//	case EnemyType.Common:
-		//		prefabObjectInstance.transform.localScale = Vector3.one;
-		//		break;
-		//	case EnemyType.Elite:
-		//		prefabObjectInstance.transform.localScale = new Vector3( 1.5f, 1.5f, 1.5f );
-		//		break;
-		//	case EnemyType.Legendary:
-		//		prefabObjectInstance.transform.localScale = new Vector3( 2.5f, 2.5f, 2.5f );
-		//		break;
-		//	case EnemyType.Boss:
-		//		break;
-		//	default:
-		//		break;
-		//}
+		switch( type )
+		{
+			case EnemyType.Common:
+				transform.localScale = Vector3.one;
+				break;
+
+			case EnemyType.Elite:
+				transform.localScale = new Vector3( 1.5f, 1.5f, 1.5f );
+				break;
+
+			case EnemyType.Legendary:
+				transform.localScale = new Vector3( 2.5f, 2.5f, 2.5f );
+				break;
+
+			case EnemyType.Boss:
+				break;
+
+			default:
+				break;
+		}
 
 		anim = GetComponentInChildren<Animator>();
 
@@ -251,6 +255,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 			}
 			if( Vector3.Distance( transform.position, target.transform.position ) >= targetMaxChaseDistance )
 			{
+				targetAcquired = false;
 				SetBehaviour( EnemyState.IDLE );
 				ReturnToStartingPos();
 			}
@@ -270,7 +275,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// <returns></returns>
 	private IEnumerator DetectTarget()
 	{
-		while( !targetAcquired )
+		while( state == EnemyState.IDLE || !targetAcquired )
 		{
 			Collider[] collidersInRange = Physics.OverlapSphere( transform.position, targetDetectionRadius, targetLayer );
 			float dist = Mathf.Infinity;

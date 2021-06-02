@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
 		{
 			case PlayerStates.IDLE:
 				MovePlayer();
-				animator.SetFloat( "movementSpeedPercent", 0, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "movementSpeedPercent", 0.001f, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.WALKING:
