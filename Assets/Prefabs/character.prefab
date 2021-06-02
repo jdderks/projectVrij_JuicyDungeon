@@ -831,6 +831,7 @@ GameObject:
   - component: {fileID: 7253695275268239887}
   - component: {fileID: 2396863989977762771}
   - component: {fileID: 8082213865473734236}
+  - component: {fileID: 6181674849630969202}
   m_Layer: 6
   m_Name: character
   m_TagString: Untagged
@@ -907,3 +908,15 @@ MonoBehaviour:
   rollDistance: 1
   rollSpeed: 100
   cameraTransform: {fileID: 0}
+--- !u!114 &6181674849630969202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9000623494827952915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db786ab28119da44fb30967b572bdc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
