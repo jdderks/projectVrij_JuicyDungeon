@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x8000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 00000127A73E70B8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000217B96A5B68 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x8000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -21,14 +21,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR5_mono', format=5, channels=1, frequency=48000, lengthbytes=3552, lengthpcm=19391, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.079376.
@@ -37,14 +37,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR3_mono', format=5, channels=1, frequency=48000, lengthbytes=3488, lengthpcm=16224, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.705292.
@@ -53,14 +53,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR8_mono', format=5, channels=1, frequency=48000, lengthbytes=3360, lengthpcm=17921, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.064667.
@@ -69,14 +69,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR1_mono', format=5, channels=1, frequency=48000, lengthbytes=3872, lengthpcm=18687, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.234955.
@@ -85,14 +85,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR8_mono', format=5, channels=1, frequency=48000, lengthbytes=5856, lengthpcm=30619, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.091461.
@@ -101,14 +101,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR7_mono', format=5, channels=1, frequency=48000, lengthbytes=3424, lengthpcm=18240, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.513489.
@@ -117,14 +117,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR5_mono', format=5, channels=1, frequency=48000, lengthbytes=5696, lengthpcm=30893, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.073822.
@@ -133,14 +133,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR4_mono', format=5, channels=1, frequency=48000, lengthbytes=3104, lengthpcm=17120, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.165833.
@@ -149,14 +149,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR2_mono', format=5, channels=1, frequency=48000, lengthbytes=6400, lengthpcm=31263, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.094269.
@@ -165,14 +165,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR4_mono', format=5, channels=1, frequency=48000, lengthbytes=6208, lengthpcm=31342, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.091278.
@@ -181,14 +181,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR7_mono', format=5, channels=1, frequency=48000, lengthbytes=4960, lengthpcm=27949, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.071136.
@@ -197,14 +197,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR6_mono', format=5, channels=1, frequency=48000, lengthbytes=6112, lengthpcm=30927, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.071777.
@@ -213,14 +213,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR2_mono', format=5, channels=1, frequency=48000, lengthbytes=3168, lengthpcm=16960, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.555054.
@@ -229,14 +229,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR3_mono', format=5, channels=1, frequency=48000, lengthbytes=5120, lengthpcm=28368, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.017517.
@@ -245,14 +245,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Trainers_Asphalt_Run_RR6_mono', format=5, channels=1, frequency=48000, lengthbytes=3904, lengthpcm=19840, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.231354.
@@ -261,283 +261,49 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000001B1F06F568
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000001291311FFF8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFA21127D70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFA21127D40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFA21127E40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFA21127F00
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000217AF27F1A8
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Sample 0/1: name='FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR1_mono', format=5, channels=1, frequency=48000, lengthbytes=5408, lengthpcm=29052, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.063690.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR8_mono', format=5, channels=1, frequency=48000, lengthbytes=11712, lengthpcm=71566, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.706543.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR6_mono', format=5, channels=1, frequency=48000, lengthbytes=8480, lengthpcm=51369, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.888184.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR1_mono', format=5, channels=1, frequency=48000, lengthbytes=7456, lengthpcm=42508, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.888184.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR5_mono', format=5, channels=1, frequency=48000, lengthbytes=11552, lengthpcm=71566, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.888184.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR9_mono', format=5, channels=1, frequency=48000, lengthbytes=6944, lengthpcm=39013, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.897339.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR4_mono', format=5, channels=1, frequency=48000, lengthbytes=9664, lengthpcm=58008, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.888184.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR2_mono', format=5, channels=1, frequency=48000, lengthbytes=10368, lengthpcm=59031, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.941254.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR3_mono', format=5, channels=1, frequency=48000, lengthbytes=6848, lengthpcm=39509, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.902954.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR7_mono', format=5, channels=1, frequency=48000, lengthbytes=9344, lengthpcm=52308, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.888184.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000012913120838
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='SWORD_Whoosh_Hit_Armor_Hard_RR10_mono', format=5, channels=1, frequency=48000, lengthbytes=11712, lengthpcm=68358, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.836578.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000128B7D4DAC8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='WHOOSH_Short_02_mono', format=5, channels=1, frequency=48000, lengthbytes=2176, lengthpcm=11900, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.968353.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000128B7D4DAC8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='WHOOSH_Short_01_Whistle_mono', format=5, channels=1, frequency=48000, lengthbytes=1152, lengthpcm=5890, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.738281.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 175488
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 22656
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000012BBA1F0B8
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF8896C7D70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF8896C7D40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF8896C7E40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF8896C7F00
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000128B7D4DAC8
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='WHOOSH_Short_03_mono', format=5, channels=1, frequency=48000, lengthbytes=2112, lengthpcm=11900, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.972504.
-[LOG] SoundI::release                          :  (000001292495F818)
-[LOG] SoundI::release                          :     WHOOSH_Short_01_Whistle_mono (00000128771338A8)
-[LOG] SoundI::release                          :  (000001292495F538)
-[LOG] SoundI::release                          :     WHOOSH_Short_02_mono (0000012877140228)
-[LOG] SoundI::release                          :  (000001292495EF78)
-[LOG] SoundI::release                          :     WHOOSH_Short_03_mono (00000128771393A8)
-[LOG] SoundI::release                          :  (00000128142E8AE8)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR1_mono (0000012877140F28)
-[LOG] SoundI::release                          :  (00000128142E83B8)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR2_mono (00000128771422A8)
-[LOG] SoundI::release                          :  (00000128142E8528)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR3_mono (00000128771425E8)
-[LOG] SoundI::release                          :  (00000128142E8248)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR4_mono (0000012877141268)
-[LOG] SoundI::release                          :  (00000128142E8C58)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR5_mono (0000012877142AC8)
-[LOG] SoundI::release                          :  (00000128142E8978)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR6_mono (0000012877142448)
-[LOG] SoundI::release                          :  (00000128142E8698)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR7_mono (0000012877141DC8)
-[LOG] SoundI::release                          :  (00000128142E8DC8)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR8_mono (0000012877142108)
-[LOG] SoundI::release                          :  (00000128142E80D8)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR9_mono (0000012877141C28)
-[LOG] SoundI::release                          :  (000001292495FC68)
-[LOG] SoundI::release                          :     SWORD_Whoosh_Hit_Armor_Hard_RR10_mono (0000012877140088)
-[LOG] SoundI::release                          :  (00000127A8155378)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR1_mono (00000127A5F84198)
-[LOG] SoundI::release                          :  (00000127559A9538)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR2_mono (00000127A5F844D8)
-[LOG] SoundI::release                          :  (00000127A8155658)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR3_mono (00000127A5F86BD8)
-[LOG] SoundI::release                          :  (00000127559A9988)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR4_mono (00000127A5F84338)
-[LOG] SoundI::release                          :  (00000127A8155208)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR5_mono (00000127A5F83CB8)
-[LOG] SoundI::release                          :  (00000127559A90E8)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR6_mono (00000127A5F84B58)
-[LOG] SoundI::release                          :  (00000127559A96A8)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR7_mono (00000127A5F84E98)
-[LOG] SoundI::release                          :  (00000127A8155098)
-[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR8_mono (00000127A5F84818)
-[LOG] SoundI::release                          :  (00000127A81554E8)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR8_mono (00000127A5F837D8)
-[LOG] SoundI::release                          :  (00000128142E8808)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR1_mono (00000127A5F856B8)
-[LOG] SoundI::release                          :  (00000127559A9258)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR2_mono (00000127A5F85378)
-[LOG] SoundI::release                          :  (00000127559A9AF8)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR3_mono (00000127A5F849B8)
-[LOG] SoundI::release                          :  (00000127559A93C8)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR4_mono (00000127A5F83FF8)
-[LOG] SoundI::release                          :  (00000127559A9C68)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR5_mono (00000127A5F86898)
-[LOG] SoundI::release                          :  (00000127559A9DD8)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR6_mono (00000127A5F86A38)
-[LOG] SoundI::release                          :  (00000127559A9818)
-[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR7_mono (00000127A5F85518)
+[LOG] SoundI::release                          :  (00000217BA47DEA8)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR1_mono (00000217AF132BD8)
+[LOG] SoundI::release                          :  (00000217BA47E8B8)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR2_mono (00000217AF1357B8)
+[LOG] SoundI::release                          :  (00000217BA47E468)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR3_mono (00000217AF1345D8)
+[LOG] SoundI::release                          :  (00000217BA47CED8)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR4_mono (00000217AF132D78)
+[LOG] SoundI::release                          :  (00000217BA47FE48)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR5_mono (00000217AF135AF8)
+[LOG] SoundI::release                          :  (00000217BA47EB98)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR6_mono (00000217AF132078)
+[LOG] SoundI::release                          :  (00000217BA47C7A8)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR7_mono (00000217AF133258)
+[LOG] SoundI::release                          :  (00000217BA47B218)
+[LOG] SoundI::release                          :     FOOTSTEP_Trainers_Asphalt_Run_RR8_mono (00000217AF134DF8)
+[LOG] SoundI::release                          :  (00000217BA47E188)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR8_mono (00000217AF134AB8)
+[LOG] SoundI::release                          :  (00000217BA47EE78)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR1_mono (00000217AF132218)
+[LOG] SoundI::release                          :  (00000217BA47EA28)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR2_mono (00000217AF134918)
+[LOG] SoundI::release                          :  (00000217BA47D048)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR3_mono (00000217AF133C18)
+[LOG] SoundI::release                          :  (00000217BA47BD98)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR4_mono (00000217AF133A78)
+[LOG] SoundI::release                          :  (00000217BA47E2F8)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR5_mono (00000217AF135618)
+[LOG] SoundI::release                          :  (00000217BA47E5D8)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR6_mono (00000217AF1333F8)
+[LOG] SoundI::release                          :  (00000217BA47B4F8)
+[LOG] SoundI::release                          :     FOOTSTEP_Asphalt_Trainers_Walk_Slow_RR7_mono (00000217AF1330B8)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients

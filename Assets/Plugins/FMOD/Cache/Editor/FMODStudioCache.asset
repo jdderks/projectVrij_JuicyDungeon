@@ -92,6 +92,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8332743636088186372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Locomotion/Enemy_Footsteps_Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Locomotion/Enemy_Footsteps_Walking
+  guid: dffa2b55f34601499451c9ba645c218a
+  Banks:
+  - {fileID: -644891631263911888}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7564866910735428895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +131,29 @@ MonoBehaviour:
   guid: dffa2b55f34601499451c9ba645c218a
   Banks:
   - {fileID: 5993169722102753492}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6941097111566954237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Hit
+  guid: 0b4c296670e00b4993da2fdb94ac5f08
+  Banks:
+  - {fileID: -644891631263911888}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -337,6 +383,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1601857998280284060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
+  guid: 64575956e01bdc4fa9f88a4afb67281d
+  Banks:
+  - {fileID: -644891631263911888}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1269649807511182380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +429,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-644891631263911888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: F:/Google Drive/HKU/Jaar2/Blok4/Project Vrij 2/FMOD_Project/ProjectVrij2/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637582322275802660
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 198144
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,22 +463,45 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 5480849374921215235}
-  - {fileID: 5993169722102753492}
+  - {fileID: 7210053672593523314}
+  - {fileID: -644891631263911888}
   EditorEvents:
-  - {fileID: 6150816467667623064}
-  - {fileID: -1269649807511182380}
-  - {fileID: 7870953727741376336}
-  - {fileID: -6851525128742635756}
-  - {fileID: -7564866910735428895}
-  - {fileID: -8702791347859431830}
+  - {fileID: -6941097111566954237}
+  - {fileID: -1601857998280284060}
+  - {fileID: 5919384182786723576}
+  - {fileID: 263717576388133897}
+  - {fileID: -8332743636088186372}
+  - {fileID: 1242684557594624872}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5993169722102753492}
+  - {fileID: -644891631263911888}
   StringsBanks:
-  - {fileID: 5480849374921215235}
-  stringsBankWriteTime: 637582397122702586
+  - {fileID: 7210053672593523314}
+  stringsBankWriteTime: 637582322312059769
   cacheVersion: 6
+--- !u!114 &263717576388133897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Locomotion/Player_Footsteps_Walking
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Locomotion/Player_Footsteps_Walking
+  guid: de2aa30f4863bb47a3299496c63210a4
+  Banks:
+  - {fileID: -644891631263911888}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &798059992595193238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +518,29 @@ MonoBehaviour:
   guid: 9d234e5e91cea2429a064c742ba43fa0
   Banks:
   - {fileID: -3324189608253566608}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1242684557594624872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Locomotion/Enemy_Footsteps_Running
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Locomotion/Enemy_Footsteps_Running
+  guid: f9c56a1fa5a6f44f8e2edc3140307409
+  Banks:
+  - {fileID: -644891631263911888}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -561,6 +697,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &5919384182786723576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Locomotion/Player_Footsteps_Running
+  m_EditorClassIdentifier: 
+  Path: event:/Player/Locomotion/Player_Footsteps_Running
+  guid: 9d234e5e91cea2429a064c742ba43fa0
+  Banks:
+  - {fileID: -644891631263911888}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5951124978485262869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +852,27 @@ MonoBehaviour:
   - Name: Desktop
     Value: 812
   Exists: 0
+--- !u!114 &7210053672593523314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: F:/Google Drive/HKU/Jaar2/Blok4/Project Vrij 2/FMOD_Project/ProjectVrij2/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637582322312059769
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1082
+  Exists: 1
 --- !u!114 &7237042954996501680
 MonoBehaviour:
   m_ObjectHideFlags: 0
