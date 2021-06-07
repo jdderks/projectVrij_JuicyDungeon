@@ -12,7 +12,8 @@ enum PlayerStates
 	IDLE = 0,
 	WALKING = 1,
 	RUNNING = 2,
-	ROLLING = 3
+	ROLLING = 3,
+	SHOOTING = 4
 }
 
 public class PlayerController : MonoBehaviour
@@ -35,7 +36,9 @@ public class PlayerController : MonoBehaviour
 
 	private Vector2 input;
 	private Vector2 inputDir;
+	private Vector2 mousePos;
 	private bool running = false;
+	private Player player;
 
 	private Animator animator;
 
@@ -46,6 +49,7 @@ public class PlayerController : MonoBehaviour
 
 	private void Start()
 	{
+		player = GetComponent<Player>();
 		animator = GetComponent<Animator>();
 
 		currentRollSpeed = rollSpeed;
@@ -58,7 +62,9 @@ public class PlayerController : MonoBehaviour
 		//If in rolling state do rolling functionality
 
 
+
 		HandlePlayerInput();
+		HandleRotation();
 		HandleStates();
 	}
 
@@ -67,22 +73,22 @@ public class PlayerController : MonoBehaviour
 		switch( playerState )
 		{
 			case PlayerStates.IDLE:
-				MovePlayer();
-				animator.SetFloat( "movementSpeedPercent", 0.001f, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 0.0001f, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.WALKING:
-				MovePlayer();
-				animator.SetFloat( "movementSpeedPercent", 0.5f, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 0.5f, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.RUNNING:
-				MovePlayer();
-				animator.SetFloat( "movementSpeedPercent", 1.0f, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 1f, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.ROLLING:
-				Roll();
+				break;
+
+			case PlayerStates.SHOOTING:
+				Shoot();
 				break;
 
 			default:
@@ -95,6 +101,9 @@ public class PlayerController : MonoBehaviour
 		input = new Vector2( Input.GetAxisRaw( "Horizontal" ), Input.GetAxisRaw( "Vertical" ) );
 		inputDir = input.normalized;
 		running = Input.GetKey( KeyCode.LeftShift ); //TODO: Input needs to be in InputManager
+
+		animator.SetFloat( "X Velocity", input.y, speedSmoothTime, Time.deltaTime );
+		animator.SetFloat( "Z Velocity", input.x, speedSmoothTime, Time.deltaTime );
 
 		if( inputDir == Vector2.zero && playerState != PlayerStates.ROLLING )
 		{
@@ -115,37 +124,31 @@ public class PlayerController : MonoBehaviour
 		{
 			playerState = PlayerStates.ROLLING;
 		}
-	}
 
-	private void MovePlayer()
-	{
-		if( inputDir != Vector2.zero )
+		if( Input.GetAxisRaw( "Fire1" ) == 1 )
 		{
-			float targetRotation = Mathf.Atan2( inputDir.x, inputDir.y ) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
-			transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle( transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime );
+			playerState = PlayerStates.SHOOTING;
 		}
 
-		float targetSpeed = ( ( running ) ? runSpeed : walkSpeed ) * inputDir.magnitude;
-		currentSpeed = Mathf.SmoothDamp( currentSpeed, targetSpeed, ref speedSmoothVelocity, speedSmoothTime );
-
-		transform.Translate( transform.forward * currentSpeed * Time.deltaTime, Space.World );
 	}
 
-	private void Roll()
+	private void HandleRotation()
 	{
-		animator.SetTrigger( "roll" );
-		playerState = PlayerStates.IDLE;
+		Ray cameraRay = Camera.main.ScreenPointToRay( Input.mousePosition );
+		Plane groundPlane = new Plane( Vector3.up, Vector3.zero );
+		float rayLength;
 
-		//        Vector3 rollDir = transform.position + transform.forward * rollDistance;
-		//        Debug.Log(rollDir);
-		//        transform.Translate( rollDir * currentRollSpeed * Time.deltaTime, Space.World );
+		if( groundPlane.Raycast( cameraRay, out rayLength ) )
+		{
+			Vector3 pointToLook = cameraRay.GetPoint( rayLength );
 
-		//        currentRollSpeed -= currentRollSpeed * 10f * Time.deltaTime;
-		//        if( currentRollSpeed < 5f)
-		//        {
-		//            playerState = PlayerStates.IDLE;
-		//            currentRollSpeed = rollSpeed;
-		////		}
+			transform.LookAt( new Vector3( pointToLook.x, transform.position.y, pointToLook.z ) );
+		}
+	}
+
+	private void Shoot()
+	{
+		//animator.SetTrigger( "ChargeBow" );
 	}
 
 	public void PlayRunningAudio()

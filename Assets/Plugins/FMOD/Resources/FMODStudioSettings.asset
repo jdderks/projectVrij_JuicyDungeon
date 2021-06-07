@@ -333,10 +333,10 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
-  HasPlatforms: 1
+  HasSourceProject: 0
+  HasPlatforms: 0
   sourceProjectPath: F:/Google Drive/HKU/Jaar2/Blok4/Project Vrij 2/FMOD_Project/ProjectVrij2/ProjectVrij2.fspro
-  sourceBankPath: F:/Google Drive/HKU/Jaar2/Blok4/Project Vrij 2/FMOD_Project/ProjectVrij2/Build
+  sourceBankPath: FMOD Builds/Desktop
   SourceBankPathUnformatted: 
   BankRefreshCooldown: 1
   ShowBankRefreshWindow: 0
