@@ -73,21 +73,22 @@ public class PlayerController : MonoBehaviour
 		switch( playerState )
 		{
 			case PlayerStates.IDLE:
-				animator.SetFloat( "Movement State", 0.0001f, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 1, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.WALKING:
-				animator.SetFloat( "Movement State", 0.5f, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 2, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.RUNNING:
-				animator.SetFloat( "Movement State", 1f, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 3, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.ROLLING:
 				break;
 
 			case PlayerStates.SHOOTING:
+				animator.SetFloat( "Movement State", 5, speedSmoothTime, Time.deltaTime );
 				Shoot();
 				break;
 
