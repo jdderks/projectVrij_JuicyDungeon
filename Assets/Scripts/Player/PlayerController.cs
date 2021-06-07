@@ -7,7 +7,7 @@ using UnityEngine;
 /// by Sebastian Lague
 /// </summary>
 
-enum PlayerStates
+public enum PlayerStates
 {
 	IDLE = 0,
 	WALKING = 1,
@@ -18,10 +18,10 @@ enum PlayerStates
 
 public class PlayerController : MonoBehaviour
 {
+	[SerializeField] private PlayerStates playerState = PlayerStates.IDLE;
+	[Space]
 	[SerializeField] private float walkSpeed = 2f;
 	[SerializeField] private float runSpeed = 6f;
-
-	[SerializeField] private PlayerStates playerState = PlayerStates.IDLE;
 
 	[SerializeField] private float turnSmoothTime = 0.2f;
 	[SerializeField] private float turnSmoothVelocity = default;
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
 				break;
 
 			case PlayerStates.ROLLING:
+				//animator.SetFloat( "Movement State", 4, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.SHOOTING:
@@ -151,10 +152,13 @@ public class PlayerController : MonoBehaviour
 		}
 		else
 		{
-			if( inputDir != Vector2.zero )
+			if( playerState != PlayerStates.ROLLING )
 			{
-				float targetRot = ( Mathf.Atan2( inputDir.x, inputDir.y ) + 45f ) * Mathf.Rad2Deg;
-				transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle( transform.eulerAngles.y, targetRot, ref turnSmoothVelocity, turnSmoothTime );
+				if( inputDir != Vector2.zero )
+				{
+					float targetRot = Mathf.Atan2( inputDir.x, inputDir.y ) * Mathf.Rad2Deg + 45;
+					transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle( transform.eulerAngles.y, targetRot, ref turnSmoothVelocity, turnSmoothTime );
+				}
 			}
 		}
 	}
@@ -172,6 +176,21 @@ public class PlayerController : MonoBehaviour
 	public void PlayWalkingAudio()
 	{
 		FMODUnity.RuntimeManager.PlayOneShot( "event:/Player/Locomotion/Player_Footsteps_Walking", transform.position );
+	}
+
+	public void SetPlayerState( PlayerStates state )
+	{
+		playerState = state;
+	}
+
+	public void SetPlayerMovementState( int state )
+	{
+		animator.SetFloat( "Movement State", state );
+	}
+
+	public void SetPlayerMovementStateSmoothed( int state )
+	{
+		animator.SetFloat( "Movement State", state, speedSmoothTime, Time.deltaTime );
 	}
 }
 
