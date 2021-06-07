@@ -101,17 +101,17 @@ BlendTree:
     m_DirectBlendParameter: X Velocity
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -839019953224207583}
+    m_Motion: {fileID: 7400000, guid: d7b2033f2ae05404f92d449655fb501f, type: 2}
     m_Threshold: 2
-    m_Position: {x: 0.5, y: 0.5}
+    m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: X Velocity
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -8697866107635260044}
+    m_Motion: {fileID: 7400000, guid: ecbaee587893f374c9374faeac5cd2ae, type: 2}
     m_Threshold: 3
-    m_Position: {x: 1, y: 1}
+    m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: X Velocity
@@ -137,7 +137,7 @@ BlendTree:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Charged Bow Movement
+  m_Name: Charged Bow Walking
   m_Childs:
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 551762f0d567bcb4a90f7ed465451dde, type: 2}
@@ -279,6 +279,21 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!206 &708315825737862398
+BlendTree:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BlendTree
+  m_Childs: []
+  m_BlendParameter: Movement State
+  m_BlendParameterY: Blend
+  m_MinThreshold: 0
+  m_MaxThreshold: 1
+  m_UseAutomaticThresholds: 1
+  m_NormalizedBlendValues: 0
+  m_BlendType: 0
 --- !u!1102 &7466498291713760956
 AnimatorState:
   serializedVersion: 6

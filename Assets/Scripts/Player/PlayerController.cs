@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
 	private Vector2 inputDir;
 	private Vector2 mousePos;
 	private bool running = false;
+	private bool chargingAttack = false;
 	private Player player;
 
 	private Animator animator;
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour
 				break;
 
 			case PlayerStates.SHOOTING:
-				animator.SetFloat( "Movement State", 5, speedSmoothTime, Time.deltaTime );
+				animator.SetFloat( "Movement State", 5 );
 				Shoot();
 				break;
 
@@ -135,15 +136,26 @@ public class PlayerController : MonoBehaviour
 
 	private void HandleRotation()
 	{
-		Ray cameraRay = Camera.main.ScreenPointToRay( Input.mousePosition );
-		Plane groundPlane = new Plane( Vector3.up, Vector3.zero );
-		float rayLength;
-
-		if( groundPlane.Raycast( cameraRay, out rayLength ) )
+		if( playerState == PlayerStates.SHOOTING )
 		{
-			Vector3 pointToLook = cameraRay.GetPoint( rayLength );
+			Ray cameraRay = Camera.main.ScreenPointToRay( Input.mousePosition );
+			Plane groundPlane = new Plane( Vector3.up, Vector3.zero );
+			float rayLength;
 
-			transform.LookAt( new Vector3( pointToLook.x, transform.position.y, pointToLook.z ) );
+			if( groundPlane.Raycast( cameraRay, out rayLength ) )
+			{
+				Vector3 pointToLook = cameraRay.GetPoint( rayLength );
+
+				transform.LookAt( new Vector3( pointToLook.x, transform.position.y, pointToLook.z ) );
+			}
+		}
+		else
+		{
+			if( inputDir != Vector2.zero )
+			{
+				float targetRot = ( Mathf.Atan2( inputDir.x, inputDir.y ) + 45f ) * Mathf.Rad2Deg;
+				transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle( transform.eulerAngles.y, targetRot, ref turnSmoothVelocity, turnSmoothTime );
+			}
 		}
 	}
 
