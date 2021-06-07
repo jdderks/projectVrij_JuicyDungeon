@@ -180,12 +180,12 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		}
 	}
 
-	private void ReturnToStartingPos()
+	public virtual void ReturnToStartingPos()
 	{
 		agent.destination = startingPos;
 	}
 
-	private IEnumerator Wander()
+	public virtual IEnumerator Wander()
 	{
 		while( state == EnemyState.WANDERING )
 		{
@@ -216,7 +216,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// The Attack loop. The first attack will have to yield at first to remove the possibility of enemies spam attacking the player upon moving.
 	/// </summary>
 	/// <returns></returns>
-	private IEnumerator AttackTarget()
+	public virtual IEnumerator AttackTarget()
 	{
 		while( state == EnemyState.ATTACKING )
 		{
@@ -241,7 +241,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// The destination gets set every 0.5 seconds as to avoid spamming the agent with commands.
 	/// </summary>
 	/// <returns></returns>
-	private IEnumerator ChaseTarget()
+	public virtual IEnumerator ChaseTarget()
 	{
 		while( state == EnemyState.CHASING )
 		{
@@ -271,7 +271,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// It then loops through all colliders to see which one is the nearest one.
 	/// </summary>
 	/// <returns></returns>
-	private IEnumerator DetectTarget()
+	public virtual IEnumerator DetectTarget()
 	{
 		while( state == EnemyState.IDLE || !targetAcquired )
 		{
