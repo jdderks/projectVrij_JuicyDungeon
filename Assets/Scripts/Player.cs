@@ -7,20 +7,13 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IDamageable
 {
     [ProgressBar("Current Health", "currentHealth", EColor.Red), SerializeField] private float health = 100;
-    [SerializeField] private GameObject arrow;
-    [SerializeField] private float arrowSpeed = 5f;
 
     [SerializeField] private float arrowSpawnHeight = 1.2f;
 
+    [SerializeField] private ScriptableArrowObject arrowObject;
+
+
     private float currentHealth = 100f;
-
-
-
-    void Start()
-    {
-        
-    }
-
 
     void Update()
     {
@@ -30,7 +23,6 @@ public class Player : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log(health);
         if (health < 0)
         {
             Die();
@@ -56,10 +48,9 @@ public class Player : MonoBehaviour, IDamageable
 
         if (Input.GetMouseButton(1))
         {
-            GameObject projectile = Instantiate(arrow, transform.position + new Vector3(0,arrowSpawnHeight,0), Quaternion.identity);
-            projectile.transform.LookAt(hitPosition);
-            projectile.GetComponent<Rigidbody>().AddForce(projectile.transform.forward * arrowSpeed);
-            Destroy(projectile, 10);
+            GameObject arrGO = new GameObject("Arrow");
+            Arrow arr = arrGO.AddComponent<Arrow>();
+            arr.Setup(this.gameObject, transform.position + new Vector3(0, arrowSpawnHeight, 0), hitPosition, arrowObject);
         }
     }
 }

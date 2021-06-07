@@ -4,44 +4,71 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    float rayCheckLength;
+
+    private GameObject sender;
+    private Rigidbody rigidbody;
+    private BoxCollider collider;
+
+    private GameObject prefabObject;
+
+    private int damage;
+    private Vector3 position;
+    private float force;
+    
+
+    private LayerMask detectionLayer;
+
+    private float rayCheckLength;
 
     private bool hasHitTarget = false;
 
-    [SerializeField] private int Damage = 100;
-
-    [SerializeField] private LayerMask enemyLayer;
-    [SerializeField] private float speed = 0.01f;
 
     private Vector3 prevPos;
     private Vector3 currPos;
-    private void Start()
-    {
-        prevPos = transform.position;
-    }
 
+    public void Setup(GameObject sender, Vector3 position, Vector3 targetPos, ScriptableArrowObject arrowObject)
+    {
+        this.sender = sender;
+        this.prefabObject = arrowObject.prefabObject;
+
+        this.position = position;
+        this.force = arrowObject.force;
+        this.detectionLayer = arrowObject.detectionLayer;
+        this.damage = arrowObject.damage;
+
+        collider = gameObject.AddComponent<BoxCollider>();
+        rigidbody = gameObject.AddComponent<Rigidbody>();
+        collider.isTrigger = true;
+        rigidbody.collisionDetectionMode = CollisionDetectionMode.Continuous;
+        rigidbody.useGravity = false;
+        transform.position = position;
+        prevPos = transform.position;
+
+        transform.LookAt(targetPos);
+
+        rigidbody.AddForce(transform.forward * force);
+
+        Destroy(gameObject, 10);
+        Instantiate(prefabObject, transform);
+    }
+    
 
     void Update()
     {
         currPos = this.transform.position;
         Ray ray = new Ray(currPos, prevPos);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, enemyLayer))
+        if (Physics.Raycast(ray, out hit, detectionLayer))
         {
-            Debug.Log("Yeet");
+            //Debug.Log("Yeet");
         }
         prevPos = currPos;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<IDamageable>() != null)
-        {
-            if (other.gameObject.layer == enemyLayer)
-            {
-                other.GetComponent<IDamageable>().TakeDamage(Damage);
-            }
-        }
+        if (other.gameObject == sender) return;
+        other.GetComponent<IDamageable>()?.TakeDamage(damage);
     }
 
     private void OnDrawGizmos()
