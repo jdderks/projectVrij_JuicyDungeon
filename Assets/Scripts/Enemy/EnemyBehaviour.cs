@@ -47,12 +47,11 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	#endregion
 
 	#region Runtime Variables
-	[SerializeField] private Vector3 startingPos = Vector3.zero;
-	[SerializeField] private bool targetAcquired = false;
-	[SerializeField] private GameObject target;
-	[Space]
-	[SerializeField] private NavMeshAgent agent;
-	[SerializeField] private Animator anim;
+	public Vector3 startingPos = Vector3.zero;
+	public bool targetAcquired = false;
+	public GameObject target;
+	public NavMeshAgent agent;
+	public Animator anim;
 	#endregion
 
 	[ContextMenu( "Setup Stats" )]
@@ -307,18 +306,6 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	public void PlayWalkingAudio()
 	{
 		FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Locomotion/Enemy_Footsteps_Walking", transform.position );
-	}
-
-	public void PlaySwordSwingAudio()
-	{
-		if( Vector3.Distance( target.transform.position, transform.position ) <= attackDistance )
-		{
-			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Attacks/Melee/Enemy_Sword_Hit", transform.position );
-		}
-		else
-		{
-			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Attacks/Melee/Enemy_Sword_Miss", transform.position );
-		}
 	}
 
 #if UNITY_EDITOR
