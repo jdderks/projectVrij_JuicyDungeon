@@ -74,23 +74,27 @@ public class PlayerController : MonoBehaviour
 		switch( playerState )
 		{
 			case PlayerStates.IDLE:
+				animator.SetBool( "Aiming Bow", false );
 				animator.SetFloat( "Movement State", 1, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.WALKING:
+				animator.SetBool( "Aiming Bow", false );
 				animator.SetFloat( "Movement State", 2, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.RUNNING:
+				animator.SetBool( "Aiming Bow", false );
 				animator.SetFloat( "Movement State", 3, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.ROLLING:
+				animator.SetBool( "Aiming Bow", false );
 				//animator.SetFloat( "Movement State", 4, speedSmoothTime, Time.deltaTime );
 				break;
 
 			case PlayerStates.SHOOTING:
-				animator.SetFloat( "Movement State", 5 );
+				animator.SetBool( "Aiming Bow", true );
 				Shoot();
 				break;
 
@@ -128,7 +132,7 @@ public class PlayerController : MonoBehaviour
 			playerState = PlayerStates.ROLLING;
 		}
 
-		if( Input.GetAxisRaw( "Fire1" ) == 1 )
+		if( Input.GetAxisRaw( "Fire2" ) == 1 )
 		{
 			playerState = PlayerStates.SHOOTING;
 		}
@@ -165,7 +169,14 @@ public class PlayerController : MonoBehaviour
 
 	private void Shoot()
 	{
-		//animator.SetTrigger( "ChargeBow" );
+		if( Input.GetAxisRaw( "Fire1" ) == 1 )
+		{
+			animator.SetBool( "Shoot Bow", true );
+		}
+		else
+		{
+			animator.SetBool( "Shoot Bow", false );
+		}
 	}
 
 	public void PlayRunningAudio()
