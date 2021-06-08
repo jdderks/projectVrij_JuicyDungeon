@@ -1,173 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8525153303922145617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/Locomotion/Enemy_Footsteps_Walking
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/Locomotion/Enemy_Footsteps_Walking
-  guid: dffa2b55f34601499451c9ba645c218a
-  Banks:
-  - {fileID: -3872498000700723223}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6179124335915315911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
-  guid: 64575956e01bdc4fa9f88a4afb67281d
-  Banks:
-  - {fileID: -3872498000700723223}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4426350125087917904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/Grunts/Grunt_Short
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/Grunts/Grunt_Short
-  guid: 341389fb2e88f8458f3f013416fb3047
-  Banks:
-  - {fileID: -3872498000700723223}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3872498000700723223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMOD Builds/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637587775279053152
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-3661856008603797027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Effects/Bow/Bow_Shoot
-  m_EditorClassIdentifier: 
-  Path: event:/Effects/Bow/Bow_Shoot
-  guid: 46c6ed17418bf744b7ad244bf9ebb677
-  Banks:
-  - {fileID: -3872498000700723223}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 5004390618066067458}
-  - {fileID: -3872498000700723223}
-  EditorEvents:
-  - {fileID: 5262303184672731366}
-  - {fileID: -4426350125087917904}
-  - {fileID: -3661856008603797027}
-  - {fileID: -6179124335915315911}
-  - {fileID: 4227001617749257749}
-  - {fileID: 3855493649816521984}
-  - {fileID: -8525153303922145617}
-  - {fileID: 573027009248198222}
-  - {fileID: 4507015411854019437}
-  - {fileID: 4227269846535646267}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -3872498000700723223}
-  StringsBanks:
-  - {fileID: 5004390618066067458}
-  stringsBankWriteTime: 637587775279077963
-  cacheVersion: 6
---- !u!114 &573027009248198222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/Grunts/Grunt_OnDeath
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/Grunts/Grunt_OnDeath
-  guid: e1efb334abbe454d89e31bf3adf18cf3
-  Banks:
-  - {fileID: -3872498000700723223}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &3855493649816521984
+--- !u!114 &-8102174351812087131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,7 +15,7 @@ MonoBehaviour:
   Path: event:/Player/Locomotion/Player_Footsteps_Walking
   guid: de2aa30f4863bb47a3299496c63210a4
   Banks:
-  - {fileID: -3872498000700723223}
+  - {fileID: 3346142661233252070}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -190,7 +23,76 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4227001617749257749
+--- !u!114 &-7774587535715318382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Grunts/Grunt_Short
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Grunts/Grunt_Short
+  guid: 341389fb2e88f8458f3f013416fb3047
+  Banks:
+  - {fileID: 3346142661233252070}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7266144979318266176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Hit
+  guid: 0b4c296670e00b4993da2fdb94ac5f08
+  Banks:
+  - {fileID: 3346142661233252070}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7071067514360906755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Miss
+  guid: 64575956e01bdc4fa9f88a4afb67281d
+  Banks:
+  - {fileID: 3346142661233252070}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6059416683143602028
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +107,7 @@ MonoBehaviour:
   Path: event:/Player/Locomotion/Player_Footsteps_Running
   guid: 9d234e5e91cea2429a064c742ba43fa0
   Banks:
-  - {fileID: -3872498000700723223}
+  - {fileID: 3346142661233252070}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -213,7 +115,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4227269846535646267
+--- !u!114 &-3926761299746654524
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,12 +125,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Effects/Arrow/Arrow_Hit
+  m_Name: event:/Enemy/Locomotion/Enemy_Footsteps_Walking
   m_EditorClassIdentifier: 
-  Path: event:/Effects/Arrow/Arrow_Hit
-  guid: fd8d4ec96b5ce346870a0c8f927afbdd
+  Path: event:/Enemy/Locomotion/Enemy_Footsteps_Walking
+  guid: dffa2b55f34601499451c9ba645c218a
   Banks:
-  - {fileID: -3872498000700723223}
+  - {fileID: 3346142661233252070}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -236,30 +138,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4507015411854019437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/Locomotion/Enemy_Footsteps_Running
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/Locomotion/Enemy_Footsteps_Running
-  guid: f9c56a1fa5a6f44f8e2edc3140307409
-  Banks:
-  - {fileID: -3872498000700723223}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5004390618066067458
+--- !u!114 &-276172205323424460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,7 +159,40 @@ MonoBehaviour:
   - Name: 
     Value: 1302
   Exists: 1
---- !u!114 &5262303184672731366
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -276172205323424460}
+  - {fileID: 3346142661233252070}
+  EditorEvents:
+  - {fileID: -7266144979318266176}
+  - {fileID: -7774587535715318382}
+  - {fileID: 3874829430969555181}
+  - {fileID: -7071067514360906755}
+  - {fileID: -6059416683143602028}
+  - {fileID: -8102174351812087131}
+  - {fileID: -3926761299746654524}
+  - {fileID: 569063319982568018}
+  - {fileID: 1988292953230150295}
+  - {fileID: 2023987525926493889}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 3346142661233252070}
+  StringsBanks:
+  - {fileID: -276172205323424460}
+  stringsBankWriteTime: 637587775279077963
+  cacheVersion: 6
+--- !u!114 &569063319982568018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,12 +202,100 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/Attacks/Melee/Enemy_Sword_Hit
+  m_Name: event:/Enemy/Grunts/Grunt_OnDeath
   m_EditorClassIdentifier: 
-  Path: event:/Enemy/Attacks/Melee/Enemy_Sword_Hit
-  guid: 0b4c296670e00b4993da2fdb94ac5f08
+  Path: event:/Enemy/Grunts/Grunt_OnDeath
+  guid: e1efb334abbe454d89e31bf3adf18cf3
   Banks:
-  - {fileID: -3872498000700723223}
+  - {fileID: 3346142661233252070}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1988292953230150295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Locomotion/Enemy_Footsteps_Running
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Locomotion/Enemy_Footsteps_Running
+  guid: f9c56a1fa5a6f44f8e2edc3140307409
+  Banks:
+  - {fileID: 3346142661233252070}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2023987525926493889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Effects/Arrow/Arrow_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Effects/Arrow/Arrow_Hit
+  guid: fd8d4ec96b5ce346870a0c8f927afbdd
+  Banks:
+  - {fileID: 3346142661233252070}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3346142661233252070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Builds/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637587775279053152
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3874829430969555181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Effects/Bow/Bow_Shoot
+  m_EditorClassIdentifier: 
+  Path: event:/Effects/Bow/Bow_Shoot
+  guid: 46c6ed17418bf744b7ad244bf9ebb677
+  Banks:
+  - {fileID: 3346142661233252070}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
