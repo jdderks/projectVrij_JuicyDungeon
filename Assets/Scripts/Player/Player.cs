@@ -7,18 +7,21 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour, IDamageable
 {
 	[ProgressBar( "Current Health", "currentHealth", EColor.Red ), SerializeField] private float health = 100;
+	[ProgressBar( "Current Mana", "currentMana", EColor.Blue ), SerializeField] private float mana = 100;
 
 	[SerializeField] private Transform arrowSpawnPoint;
 	[SerializeField] private ScriptableArrowObject arrowObject;
 
 	private PlayerController controller;
 	private float currentHealth = 100f;
+	private float currentMana = 100f;
 	private Vector3 hitPosition = Vector3.zero;
 
-	public Transform ArrowSpawnPoint { get => arrowSpawnPoint; set => arrowSpawnPoint =  value ; }
-    public float Health { get => health; set => health = value; }
+	public Transform ArrowSpawnPoint { get => arrowSpawnPoint; set => arrowSpawnPoint = value; }
+	public float Health { get => health; set => health = value; }
+	public float Mana { get => mana; set => mana =  value ; }
 
-    private void Awake()
+	private void Awake()
 	{
 		controller = GetComponent<PlayerController>();
 	}
@@ -55,6 +58,5 @@ public class Player : MonoBehaviour, IDamageable
 		GameObject arrGO = new GameObject( "Arrow" );
 		Arrow arr = arrGO.AddComponent<Arrow>();
 		arr.Setup( this.gameObject, arrowSpawnPoint.position, hitPosition, arrowObject, 1 );
-
 	}
 }

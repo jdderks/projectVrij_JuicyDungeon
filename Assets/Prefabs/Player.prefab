@@ -370,6 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  mana: 100
   arrowSpawnPoint: {fileID: 1128621739}
   arrowObject: {fileID: 11400000, guid: 331b1da914a43994aa469ae13910596a, type: 2}
 --- !u!114 &288126471
@@ -387,6 +388,7 @@ MonoBehaviour:
   ability: {fileID: 11400000, guid: 7b9dd315ec794544193ed27cd54bb1a1, type: 2}
   cooldownTime: 0
   activeTime: 0
+  uiSlotIndex: 0
   activateKey: 49
 --- !u!1 &679333876734416362
 GameObject:

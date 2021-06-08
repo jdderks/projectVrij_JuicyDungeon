@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
 	[BoxGroup( "Dungeon Generator" )] [SerializeField] private DungenPathFirst dungeonGenerator;
 
+	[BoxGroup( "Seperate Managers" )] [SerializeField] private UIManager uiManager;
+
 	[BoxGroup( "Prefabs" )] [SerializeField] private GameObject playerPrefab;
 	[BoxGroup( "Prefabs" )] [SerializeField] private GameObject cameraPrefab;
 
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
 	[ContextMenu( "Start Game Setup" )]
 	private void Start()
 	{
+		uiManager = FindObjectOfType<UIManager>();
+
 		InstantiateNavMeshBaker();
 
 		dungeonGenerator.GenerateDungeon();
@@ -47,6 +51,10 @@ public class GameManager : MonoBehaviour
 
 			cameraInstance.GetComponent<SmoothCamFollow>().Target = playerInstance.transform;
 			playerInstance.GetComponent<PlayerController>().CameraTransform = cameraInstance.transform;
+
+			cameraInstance.transform.position = playerInstance.transform.position;
+
+			uiManager.SetPlayerInstance( FindObjectOfType<Player>() );
 		}
 	}
 

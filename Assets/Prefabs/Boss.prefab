@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2191188785296802976}
   - component: {fileID: 2191188785296802979}
   m_Layer: 7
-  m_Name: Skeleton@Skin
+  m_Name: Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2191188785296802989}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.8837995
   m_Height: 2.5962214
@@ -146,6 +146,7 @@ MonoBehaviour:
   target: {fileID: 0}
   agent: {fileID: 2191188785296704065}
   anim: {fileID: 0}
+  isHalfHealth: 0
 --- !u!1001 &2191188785464930527
 PrefabInstance:
   m_ObjectHideFlags: 0

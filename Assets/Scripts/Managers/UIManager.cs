@@ -6,19 +6,27 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    [SerializeField] private Image playerHealthImage;
-    [SerializeField] private Player player;
+	[SerializeField] private Image playerHealthImage;
+	[SerializeField] private Image playerManaImage;
+	[SerializeField] private Player playerInstance;
 
-    private float playerStartHealth;
+	private float playerStartHealth;
+	private float playerStartMana;
 
-    void Start()
-    {
-        playerStartHealth = player.Health;
-    }
+	public void SetPlayerInstance( Player player )
+	{
+		playerInstance = player;
 
-    // Update is called once per frame
-    void Update()
-    {
-        playerHealthImage.fillAmount = player.Health / playerStartHealth;
-    }
+		playerStartHealth = playerInstance.Health;
+		playerStartMana = playerInstance.Mana;
+	}
+
+	void Update()
+	{
+		if( playerInstance )
+		{
+			playerHealthImage.fillAmount = playerInstance.Health / playerStartHealth;
+			playerManaImage.fillAmount = playerInstance.Mana / playerStartMana;
+		}
+	}
 }

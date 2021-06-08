@@ -20,7 +20,6 @@ public class AbilityUISlot : MonoBehaviour
 	private void Start()
 	{
 		cooldownText.enabled = false;
-		cooldownTimer = cooldownTime;
 
 		imageStartingColor = abilityImage.color;
 		imageCooldownColor = new Color( imageStartingColor.r, imageStartingColor.g, imageStartingColor.b, 0.5f );
@@ -45,5 +44,10 @@ public class AbilityUISlot : MonoBehaviour
 				abilityImage.color = imageStartingColor;
 			}
 		}
+	}
+
+	public void SetCooldownTimer()
+	{
+		cooldownTimer = cooldownTime;
 	}
 }

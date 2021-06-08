@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Rock 3
-  prefabObject: {fileID: 919132149155446097, guid: ac7e18e60a3aa374aa53a4a3b076e2cb, type: 3}
+  prefabObject: {fileID: 2931129024011964281, guid: fd8d37fb526efe841aef4eb50e115931, type: 3}
   spawnChance: 25
   rotationOffset: {x: 0, y: 0, z: 0}
   positionOffset: {x: 0, y: 0, z: 0}

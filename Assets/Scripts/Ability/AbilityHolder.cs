@@ -7,6 +7,7 @@ public class AbilityHolder : MonoBehaviour
 	public Ability ability;
 	public float cooldownTime;
 	public float activeTime;
+	public int uiSlotIndex = 0;
 
 	public enum AbilityState
 	{
@@ -19,7 +20,6 @@ public class AbilityHolder : MonoBehaviour
 
 	public KeyCode activateKey;
 
-
 	private void Update()
 	{
 		switch( state )
@@ -27,6 +27,7 @@ public class AbilityHolder : MonoBehaviour
 			case AbilityState.ready:
 				if( Input.GetKeyDown( activateKey ) )
 				{
+					AbilityUIManager.Instance.SetUISlotCooldown( uiSlotIndex, ability.cooldownTime );
 					ability.Activate();
 					state = AbilityState.active;
 					activeTime = ability.activeTime;

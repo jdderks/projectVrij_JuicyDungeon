@@ -128,10 +128,10 @@ public class PlayerController : MonoBehaviour
 			playerState = PlayerStates.RUNNING;
 		}
 
-		if( Input.GetKeyDown( KeyCode.Space ) )
+		if( Input.GetKeyDown( KeyCode.Space ) && playerState != PlayerStates.ROLLING )
 		{
-			playerState = PlayerStates.ROLLING;
 			animator.SetTrigger( "Roll" );
+			playerState = PlayerStates.ROLLING;
 		}
 
 		if( Input.GetAxisRaw( "Fire2" ) == 1 )

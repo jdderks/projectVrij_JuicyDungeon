@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class EnemyBehaviour_Boss : EnemyBehaviour
 {
-    [SerializeField]
-    private bool isHalfHealth = false;
-    private float startHealth;
+	[SerializeField]
+	private bool isHalfHealth = false;
+	private float startHealth;
 
-    private void Start()
+	private void Start()
 	{
 		Setup();
-        startHealth = health;
+		startHealth = health;
 	}
 
 	private void Update()
 	{
 		UpdateAnimator();
-        ChargeUpWhenHalfHealth();
+		ChargeUpWhenHalfHealth();
 
-    }
+	}
 
 	public void PlaySwordSwingAudio()
 	{
@@ -33,14 +33,21 @@ public class EnemyBehaviour_Boss : EnemyBehaviour
 		}
 	}
 
-    public void ChargeUpWhenHalfHealth()
-    {
-        if (health < startHealth/2 && !isHalfHealth)
-        {
-            anim.SetTrigger("ChargeUp");
-            isHalfHealth = true;
-            agent.speed = 10f;
-        }
-    }
+	public void ChargeUpWhenHalfHealth()
+	{
+		if( health < startHealth / 2 && !isHalfHealth )
+		{
+			anim.SetTrigger( "ChargeUp" );
+			isHalfHealth = true;
+			agent.speed = 10f;
+		}
+	}
 
+	public override void OnDeath()
+	{
+		base.OnDeath();
+
+		anim.SetBool( "Dead", true );
+		Destroy( gameObject, 10f );
+	}
 }
