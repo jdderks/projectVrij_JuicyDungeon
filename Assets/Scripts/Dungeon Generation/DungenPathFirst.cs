@@ -53,6 +53,7 @@ namespace DungeonGenerationPathFirst
 		[BoxGroup( "Enemy Settings" )] [SerializeField] private List<EnemyList> enemyLists = new List<EnemyList>();     // List with Enemy Lists. Within these lists are the enemies that can be spawned per theme.
 		[BoxGroup( "Enemy Settings" )] [SerializeField] private int spawnChance = 1;                                    // How much percentage chance there is to spawn an enemy.
 
+		[BoxGroup( "Dungeon Details" )] [SerializeField] private Transform propsParentTransform;                    // Parent of all the props in the scene.
 		[BoxGroup( "Dungeon Details" )] [SerializeField] private int propsAmount;                                    // How many props will be spawned within the dungeon.
 		[BoxGroup( "Dungeon Details" )] [SerializeField] private List<Prop> spawnableProps = new List<Prop>();       // List with all the spawnable props within the dungeon.
 
@@ -113,25 +114,46 @@ namespace DungeonGenerationPathFirst
 		public void ClearDungeon()
 		{
 			// Get any left behind room objects and put them in a temp list.
-			List<GameObject> roomChildren = new List<GameObject>();
+			List<GameObject> roomParentChildren = new List<GameObject>();
 			for( int rc = 0; rc < roomParentTransform.childCount; rc++ )
 			{
-				roomChildren.Add( roomParentTransform.GetChild( rc ).gameObject );
+				roomParentChildren.Add( roomParentTransform.GetChild( rc ).gameObject );
 			}
 
 			// Get any left behind Pathway objects and put them in a temp list.
-			List<GameObject> pathwayChildren = new List<GameObject>();
+			List<GameObject> pathwayParentChildren = new List<GameObject>();
 			for( int pc = 0; pc < pathwayParentTransform.childCount; pc++ )
 			{
-				pathwayChildren.Add( pathwayParentTransform.GetChild( pc ).gameObject );
+				pathwayParentChildren.Add( pathwayParentTransform.GetChild( pc ).gameObject );
 			}
 
+			// Get any left behind Enemy objects and put them in a temp list.
+			List<GameObject> enemyParentChildren = new List<GameObject>();
+			for( int ec = 0; ec < enemyParentTransform.childCount; ec++ )
+			{
+				enemyParentChildren.Add( enemyParentTransform.GetChild( ec ).gameObject );
+			}
+
+			// Get any left behind Prop objects and put them in a temp list.
+			List<GameObject> propParentChildren = new List<GameObject>();
+			for( int pc = 0; pc < propsParentTransform.childCount; pc++ )
+			{
+				propParentChildren.Add( propsParentTransform.GetChild( pc ).gameObject );
+			}
+
+			//// Get any left behind Trap objects and put them in a temp list.
+			//List<GameObject> trapParentChildren = new List<GameObject>();
+			//for( int pc = 0; pc < trapsParentTransform.childCount; pc++ )
+			//{
+			//	trapParentChildren.Add( trapsParentTransform.GetChild( pc ).gameObject );
+			//}
+
 			// Destroy all objects.
-			foreach( GameObject roomChildGO in roomChildren )
+			foreach( GameObject roomChildGO in roomParentChildren )
 			{
 				DestroyImmediate( roomChildGO );
 			}
-			foreach( GameObject pathwayChildGO in pathwayChildren )
+			foreach( GameObject pathwayChildGO in pathwayParentChildren )
 			{
 				DestroyImmediate( pathwayChildGO );
 			}
@@ -143,6 +165,10 @@ namespace DungeonGenerationPathFirst
 			{
 				DestroyImmediate( enemy );
 			}
+			//foreach( GameObject trap in traps )
+			//{
+			//	DestroyImmediate( trap );
+			//}
 
 
 			roomIndex = 0;
@@ -150,11 +176,15 @@ namespace DungeonGenerationPathFirst
 
 			rooms.Clear();
 			tiles.Clear();
-			props.Clear();
 			enemies.Clear();
+			props.Clear();
+			//traps.Clear();
 
-			roomChildren.Clear();
-			pathwayChildren.Clear();
+			roomParentChildren.Clear();
+			pathwayParentChildren.Clear();
+			enemyParentChildren.Clear();
+			propParentChildren.Clear();
+			//trapParentChildren.Clear();
 		}
 
 		/// <summary>
@@ -313,10 +343,10 @@ namespace DungeonGenerationPathFirst
 				{
 					int randInt = Random.Range( 0, 50 );
 
-					if( randInt > 0 && randInt < 15 ) room.Type = RoomType.ENEMYSPAWN;
-					else if( randInt > 15 && randInt < 35 ) room.Type = RoomType.HUB;
-					else if( randInt > 35 && randInt < 45 ) room.Type = RoomType.SHOP;
-					else if( randInt > 45 && randInt < 50 ) room.Type = RoomType.TREASURE;
+					if( randInt > 0 && randInt < 50 ) room.Type = RoomType.ENEMYSPAWN;
+					else if( randInt > 50 && randInt < 65 ) room.Type = RoomType.HUB;
+					else if( randInt > 65 && randInt < 80 ) room.Type = RoomType.SHOP;
+					else if( randInt > 80 && randInt < 100 ) room.Type = RoomType.TREASURE;
 				}
 
 				roomGO.name = room.Name;
@@ -474,7 +504,6 @@ namespace DungeonGenerationPathFirst
 			coordinates.x += coordinatesDir.x * pathwayLength;
 			coordinates.y += coordinatesDir.y * pathwayLength;
 			GenerateRoom( coordinates, new Vector2Int( 25, 25 ), new Vector2Int( 25, 25 ), "Room[BOSS ROOM]", RoomType.BOSS, true );
-			SpawnEnemy( coordinates, GetRoomByType( RoomType.BOSS ).transform );
 
 			pathwayIndex++;
 		}
@@ -757,13 +786,20 @@ namespace DungeonGenerationPathFirst
 
 			foreach( Room room in rooms )
 			{
+				if( room.Type == RoomType.BOSS )
+				{
+					Tile centerTileInBossRoom = room.Tiles[room.Tiles.Count / 2];
+					centerTileInBossRoom.Populated = true;
+
+					SpawnEnemy( centerTileInBossRoom.Coordinates, enemyLists[enemyLists.Count - 1] );
+				}
 				if( room.Type == RoomType.ENEMYSPAWN )
 				{
 					foreach( Tile tile in room.Tiles )
 					{
 						if( tile.Type == TileType.GROUND && tile.Populated == false )
 						{
-							SpawnEnemy( tile.Coordinates, room.transform );
+							SpawnEnemy( tile.Coordinates );
 							tile.Populated = true;
 						}
 					}
@@ -774,7 +810,7 @@ namespace DungeonGenerationPathFirst
 		/// Spawns an enemy at the given coordinates
 		/// </summary>
 		/// <param name="coordinates"> Which coordinate to spawn the enemy on. </param>
-		private void SpawnEnemy( Vector2 coordinates, Transform parent = null )
+		private void SpawnEnemy( Vector2 coordinates )
 		{
 			int randomEnemyListChance = Random.Range( 0, 100 );
 			int enemyListIndex = 0;
@@ -791,7 +827,7 @@ namespace DungeonGenerationPathFirst
 			{
 				int randEnemyIndex = Random.Range( 0, enemyLists[enemyListIndex].Enemies.Count );
 
-				GameObject newEnemyGO = Instantiate( enemyLists[enemyListIndex].Enemies[randEnemyIndex], Vector3Int.zero, Quaternion.identity, parent );
+				GameObject newEnemyGO = Instantiate( enemyLists[enemyListIndex].Enemies[randEnemyIndex], Vector3Int.zero, Quaternion.identity, enemyParentTransform );
 
 				Vector3 pos = new Vector3( coordinates.x, 0 + newEnemyGO.transform.localScale.y, coordinates.y );
 
@@ -802,15 +838,28 @@ namespace DungeonGenerationPathFirst
 				enemies.Add( newEnemyGO );
 			}
 		}
+		/// <summary>
+		/// Spawns an enemy at the given coordinates
+		/// </summary>
+		/// <param name="coordinates"> Which coordinate to spawn the enemy on. </param>
+		private void SpawnEnemy( Vector2 coordinates, EnemyList enemyList = default )
+		{
+			int randEnemyIndex = Random.Range( 0, enemyList.Enemies.Count );
 
+			GameObject newEnemyGO = Instantiate( enemyList.Enemies[randEnemyIndex], Vector3Int.zero, Quaternion.identity, enemyParentTransform );
+
+			Vector3 pos = new Vector3( coordinates.x, 0 + newEnemyGO.transform.localScale.y, coordinates.y );
+
+			newEnemyGO.GetComponent<EnemyBehaviour>().SetPosition( pos );
+
+			enemies.Add( newEnemyGO );
+		}
 
 		/// <summary>
 		/// Spawns props within the dungeon to populate it some more.
 		/// </summary>
 		private void SpawnProps()
 		{
-			if( spawnableProps.Count == 0 ) return;
-
 			int propsPerRoom = propsAmount / rooms.Count;
 
 			foreach( Room room in rooms )
@@ -828,16 +877,18 @@ namespace DungeonGenerationPathFirst
 							int tileIndex = Random.Range( 0, room.Tiles.Count - 1 );
 							Tile spawnTile = room.Tiles[tileIndex];
 
-							while( spawnTile.Type != TileType.GROUND )
+							while( spawnTile.Type != TileType.GROUND && spawnTile.Populated == true )
 							{
 								tileIndex = Random.Range( 0, room.Tiles.Count - 1 );
 								spawnTile = room.Tiles[tileIndex];
-								spawnTile.Populated = true;
 							}
 
-							GameObject newPropGO = Instantiate( spawnableProps[propIndex].PrefabObject, spawnTile.transform.position, Quaternion.identity, spawnTile.transform );
+							GameObject newPropGO = Instantiate( spawnableProps[propIndex].PrefabObject, spawnTile.transform.position, Quaternion.identity, propsParentTransform );
 							newPropGO.transform.position += spawnableProps[propIndex].PositionOffset;
 							newPropGO.transform.rotation = Quaternion.Euler( spawnableProps[propIndex].RotationOffset );
+
+							props.Add( newPropGO );
+							spawnTile.Populated = true;
 						}
 					}
 				}

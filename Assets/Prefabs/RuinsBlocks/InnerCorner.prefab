@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2968238196283922549}
   - component: {fileID: 9128036604701154377}
   - component: {fileID: 6819836569211643571}
+  - component: {fileID: 5305205030121132098}
   m_Layer: 8
   m_Name: InnerCornerLod0
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5305205030121132098
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166968699668833176}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 57115675152994041, guid: 3b959258c68023348a1a51ee402a02cc, type: 3}
 --- !u!1 &4166063582966789095
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +170,7 @@ GameObject:
   - component: {fileID: 7071294454681502905}
   - component: {fileID: 220898699370076502}
   - component: {fileID: 3159281839454519574}
+  - component: {fileID: 1194778315133271852}
   m_Layer: 0
   m_Name: InnerCornerLod1
   m_TagString: Untagged
@@ -227,6 +243,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1194778315133271852
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4725248323923926865}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -9020399442562613249, guid: 8929c9b4b56fcc449bbd64719bf3398c, type: 3}
 --- !u!1 &6609028121649805201
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +268,7 @@ GameObject:
   - component: {fileID: 6576989040598273934}
   - component: {fileID: 4957486867408405373}
   - component: {fileID: 6080870307004592494}
+  - component: {fileID: 1553158705480061230}
   m_Layer: 0
   m_Name: InnerCornerLod2
   m_TagString: Untagged
@@ -310,3 +341,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1553158705480061230
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6609028121649805201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2696450563755005916, guid: ef115003a6a09b342906d9509b9315b3, type: 3}
