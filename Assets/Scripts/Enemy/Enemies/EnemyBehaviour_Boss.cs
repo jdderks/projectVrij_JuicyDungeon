@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnemyBehaviour_Boss : EnemyBehaviour
 {
+    [SerializeField]
+    private bool isHalfHealth = false;
+
 	private void Start()
 	{
 		Setup();
@@ -12,7 +15,9 @@ public class EnemyBehaviour_Boss : EnemyBehaviour
 	private void Update()
 	{
 		UpdateAnimator();
-	}
+        ChargeUpWhenHalfHealth();
+
+    }
 
 	public void PlaySwordSwingAudio()
 	{
@@ -25,4 +30,15 @@ public class EnemyBehaviour_Boss : EnemyBehaviour
 			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Attacks/Melee/Enemy_Sword_Miss", transform.position );
 		}
 	}
+
+    public void ChargeUpWhenHalfHealth()
+    {
+        if (health < 750 && !isHalfHealth)
+        {
+            isHalfHealth = true;
+            agent.speed = 10f;
+            anim.SetTrigger("ChargeUp");
+        }
+    }
+
 }
