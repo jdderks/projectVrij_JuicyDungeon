@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a877efd92956849a178fd53aa55546, type: 3}
   m_Name: PlayerArrow
   m_EditorClassIdentifier: 
-  prefabObject: {fileID: 3967245574977963899, guid: 7b47abe897c44a042a09628aa94a27ed, type: 3}
+  prefabObject: {fileID: 8490284153919565494, guid: 1365561f19530f0478476c12f1a3af32, type: 3}
   force: 1500
   damage: 100
   detectionLayer:

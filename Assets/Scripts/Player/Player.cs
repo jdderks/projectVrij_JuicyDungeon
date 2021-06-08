@@ -8,7 +8,7 @@ public class Player : MonoBehaviour, IDamageable
 {
 	[ProgressBar( "Current Health", "currentHealth", EColor.Red ), SerializeField] private float health = 100;
 
-	[SerializeField] private float arrowSpawnHeight = 1.2f;
+	[SerializeField] private Transform arrowSpawnPoint;
 	[SerializeField] private ScriptableArrowObject arrowObject;
 
 	private PlayerController controller;
@@ -41,8 +41,9 @@ public class Player : MonoBehaviour, IDamageable
 
 		if( Physics.Raycast( ray, out hit, 100 ) )
 		{
-			hitPosition = new Vector3( hit.point.x, arrowSpawnHeight, hit.point.z );
+			hitPosition = new Vector3( hit.point.x, arrowSpawnPoint.position.y, hit.point.z );
 			Debug.DrawLine( transform.position, hitPosition );
+			SpawnArrow();
 		}
 	}
 
@@ -50,6 +51,6 @@ public class Player : MonoBehaviour, IDamageable
 	{
 		GameObject arrGO = new GameObject( "Arrow" );
 		Arrow arr = arrGO.AddComponent<Arrow>();
-		arr.Setup( this.gameObject, transform.position + new Vector3( 0, arrowSpawnHeight, 0 ), hitPosition, arrowObject );
+		arr.Setup( this.gameObject, arrowSpawnPoint.position, hitPosition, arrowObject );
 	}
 }
