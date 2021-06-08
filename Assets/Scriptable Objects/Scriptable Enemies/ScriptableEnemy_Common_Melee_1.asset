@@ -18,7 +18,7 @@ MonoBehaviour:
     m_Bits: 64
   prefabObject: {fileID: 1948329710155509286, guid: 38283d0f2f9588c4a90e9a27a86fdbdc, type: 3}
   health: 100
-  walkSpeed: 5
+  walkSpeed: 2
   runSpeed: 8
   wanderIntervalMIN: 5
   wanderIntervalMAX: 10
@@ -26,7 +26,7 @@ MonoBehaviour:
   attackSpeed: 2
   attackDamage: 10
   attackDistance: 2
-  targetDetectionRadius: 15
+  targetDetectionRadius: 14.22
   targetDetectionInterval: 0.25
   targetMaxChaseDistance: 20
   graphics: {fileID: 0}

@@ -88,26 +88,26 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 
 		// Setup Components
 		//GameObject prefabObjectInstance = Instantiate( prefabObject, transform.position, Quaternion.identity, transform );
-		switch( type )
-		{
-			case EnemyType.Common:
-				transform.localScale = Vector3.one;
-				break;
+		//switch( type )
+		//{
+		//	case EnemyType.Common:
+		//		transform.localScale = Vector3.one;
+		//		break;
 
-			case EnemyType.Elite:
-				transform.localScale = new Vector3( 1.5f, 1.5f, 1.5f );
-				break;
+		//	case EnemyType.Elite:
+		//		transform.localScale = new Vector3( 1.5f, 1.5f, 1.5f );
+		//		break;
 
-			case EnemyType.Legendary:
-				transform.localScale = new Vector3( 2.5f, 2.5f, 2.5f );
-				break;
+		//	case EnemyType.Legendary:
+		//		transform.localScale = new Vector3( 2.5f, 2.5f, 2.5f );
+		//		break;
 
-			case EnemyType.Boss:
-				break;
+		//	case EnemyType.Boss:
+		//		break;
 
-			default:
-				break;
-		}
+		//	default:
+		//		break;
+		//}
 
 		anim = GetComponentInChildren<Animator>();
 
