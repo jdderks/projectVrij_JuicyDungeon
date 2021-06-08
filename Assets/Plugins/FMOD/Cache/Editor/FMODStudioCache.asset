@@ -472,12 +472,16 @@ MonoBehaviour:
   - {fileID: 263717576388133897}
   - {fileID: -8332743636088186372}
   - {fileID: 1242684557594624872}
+  - {fileID: 5576169673251341608}
+  - {fileID: 1234310580107664158}
+  - {fileID: 8471056316581028376}
+  - {fileID: 6855400214514017651}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2389973462321869212}
   StringsBanks:
   - {fileID: 8861342520520512954}
-  stringsBankWriteTime: 637586716877788781
+  stringsBankWriteTime: 637587775279077963
   cacheVersion: 6
 --- !u!114 &263717576388133897
 MonoBehaviour:
@@ -518,6 +522,29 @@ MonoBehaviour:
   guid: 9d234e5e91cea2429a064c742ba43fa0
   Banks:
   - {fileID: -3324189608253566608}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1234310580107664158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Effects/Bow/Bow_Shoot
+  m_EditorClassIdentifier: 
+  Path: event:/Effects/Bow/Bow_Shoot
+  guid: 46c6ed17418bf744b7ad244bf9ebb677
+  Banks:
+  - {fileID: 2389973462321869212}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -607,7 +634,7 @@ MonoBehaviour:
   Path: FMOD Builds/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637586716877808786
+  lastModified: 637587775279053152
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -715,6 +742,29 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+  Length: 0
+--- !u!114 &5576169673251341608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Grunts/Grunt_Short
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Grunts/Grunt_Short
+  guid: 341389fb2e88f8458f3f013416fb3047
+  Banks:
+  - {fileID: 2389973462321869212}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 0
 --- !u!114 &5919384182786723576
 MonoBehaviour:
@@ -850,6 +900,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1082
   Exists: 1
+--- !u!114 &6855400214514017651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Effects/Arrow/Arrow_Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Effects/Arrow/Arrow_Hit
+  guid: fd8d4ec96b5ce346870a0c8f927afbdd
+  Banks:
+  - {fileID: 2389973462321869212}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7118010033455544411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +1011,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8471056316581028376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Grunts/Grunt_OnDeath
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Grunts/Grunt_OnDeath
+  guid: e1efb334abbe454d89e31bf3adf18cf3
+  Banks:
+  - {fileID: 2389973462321869212}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &8861342520520512954
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,11 +1049,11 @@ MonoBehaviour:
   Path: FMOD Builds/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637586716877788781
+  lastModified: 637587775279077963
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1082
+    Value: 1302
   Exists: 1
 --- !u!114 &8983369782441653509
 MonoBehaviour:

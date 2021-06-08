@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
 			playerInstance = Instantiate( playerPrefab, spawnPos, Quaternion.identity );
 			cameraInstance = Instantiate( cameraPrefab, playerInstance.transform.position, Quaternion.identity );
 
-			cameraInstance.GetComponent<CameraPivotBehaviour>().Player = playerInstance;
+			cameraInstance.GetComponent<SmoothCamFollow>().Target = playerInstance.transform;
 			playerInstance.GetComponent<PlayerController>().CameraTransform = cameraInstance.transform;
 		}
 	}
