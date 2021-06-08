@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 	private Player player;
 
 	private Animator animator;
+	private CapsuleCollider collider;
 
 	[SerializeField]
 	private Transform cameraTransform;
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
 		if( Input.GetKeyDown( KeyCode.Space ) )
 		{
 			playerState = PlayerStates.ROLLING;
+			animator.SetTrigger( "Roll" );
 		}
 
 		if( Input.GetAxisRaw( "Fire2" ) == 1 )

@@ -178,7 +178,7 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 		{
 			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Grunts/Grunt_OnDeath", transform.position );
 			state = EnemyState.DEAD;
-			Destroy( gameObject, 10 );
+			Destroy( gameObject );
 		}
 	}
 
