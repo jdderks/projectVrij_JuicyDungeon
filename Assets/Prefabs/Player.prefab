@@ -263,6 +263,7 @@ GameObject:
   - component: {fileID: 336375903469679598}
   - component: {fileID: 336375903469679593}
   - component: {fileID: 336375903469679592}
+  - component: {fileID: 288126471}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -354,6 +355,22 @@ MonoBehaviour:
   health: 100
   arrowSpawnPoint: {fileID: 1128621739}
   arrowObject: {fileID: 11400000, guid: 331b1da914a43994aa469ae13910596a, type: 2}
+--- !u!114 &288126471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606409026569408187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635aedd6873e70c4b8a18299c60cf154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ability: {fileID: 11400000, guid: 7b9dd315ec794544193ed27cd54bb1a1, type: 2}
+  cooldownTime: 0
+  activeTime: 0
+  activateKey: 49
 --- !u!1 &679333876734416362
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,12 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a877efd92956849a178fd53aa55546, type: 3}
-  m_Name: PlayerArrow
+  m_Script: {fileID: 11500000, guid: 76b2613ba93f40e44827ba885fbb059f, type: 3}
+  m_Name: Penetrating Arrow
   m_EditorClassIdentifier: 
-  detectionLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  prefabObject: {fileID: 8490284153919565494, guid: 1365561f19530f0478476c12f1a3af32, type: 3}
-  force: 1500
-  damage: 35
+  name: Penetrating Arrow
+  cooldownTime: 5
+  activeTime: 0
+  scriptableArrowObject: {fileID: 11400000, guid: 5283fe95dac24e64b80be35f971bb95f, type: 2}

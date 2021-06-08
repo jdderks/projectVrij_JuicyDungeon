@@ -15,6 +15,8 @@ public class Player : MonoBehaviour, IDamageable
 	private float currentHealth = 100f;
 	private Vector3 hitPosition = Vector3.zero;
 
+	public Transform ArrowSpawnPoint { get => arrowSpawnPoint; set => arrowSpawnPoint =  value ; }
+
 	private void Awake()
 	{
 		controller = GetComponent<PlayerController>();
@@ -51,6 +53,7 @@ public class Player : MonoBehaviour, IDamageable
 	{
 		GameObject arrGO = new GameObject( "Arrow" );
 		Arrow arr = arrGO.AddComponent<Arrow>();
-		arr.Setup( this.gameObject, arrowSpawnPoint.position, hitPosition, arrowObject );
+		arr.Setup( this.gameObject, arrowSpawnPoint.position, hitPosition, arrowObject, 1 );
+
 	}
 }

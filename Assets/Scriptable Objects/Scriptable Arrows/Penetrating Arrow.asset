@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 99a877efd92956849a178fd53aa55546, type: 3}
-  m_Name: PlayerArrow
+  m_Name: Penetrating Arrow
   m_EditorClassIdentifier: 
   detectionLayer:
     serializedVersion: 2
     m_Bits: 128
-  prefabObject: {fileID: 8490284153919565494, guid: 1365561f19530f0478476c12f1a3af32, type: 3}
-  force: 1500
-  damage: 35
+  prefabObject: {fileID: 8490284153919565494, guid: bd16f6e4b7530f64eb6711a255570230, type: 3}
+  force: 2000
+  damage: 250

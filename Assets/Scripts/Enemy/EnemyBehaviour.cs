@@ -171,12 +171,14 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	/// <param name="damage"> How much damage should be aplied. </param>
 	public virtual void TakeDamage( int damage )
 	{
+		FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Grunts/Grunt_Short", transform.position );
 		health -= damage;
 		Debug.Log( "Ouch" );
 		if( health <= 0 )
 		{
+			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Grunts/Grunt_OnDeath", transform.position );
 			state = EnemyState.DEAD;
-			Destroy( gameObject );
+			Destroy( gameObject, 10 );
 		}
 	}
 
