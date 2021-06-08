@@ -14,6 +14,11 @@ public class SmoothCamFollow : MonoBehaviour
 
 	public Transform Target { get => target; set => target = value; }
 
+	public void SetPos( Vector3 pos )
+	{
+		transform.position = pos;
+	}
+
 	private void Update()
 	{
 		desiredPos = new Vector3( target.transform.position.x + offset.x, target.transform.position.y + offset.y, target.transform.position.z + offset.z );

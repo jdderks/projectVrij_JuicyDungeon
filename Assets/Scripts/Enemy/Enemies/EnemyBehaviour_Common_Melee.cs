@@ -25,4 +25,11 @@ public class EnemyBehaviour_Common_Melee : EnemyBehaviour
 			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Attacks/Melee/Enemy_Sword_Miss", transform.position );
 		}
 	}
+
+	public override void OnDeath()
+	{
+		base.OnDeath();
+
+		Destroy( gameObject );
+	}
 }

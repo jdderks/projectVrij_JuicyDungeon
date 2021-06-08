@@ -173,18 +173,26 @@ public class EnemyBehaviour : MonoBehaviour, IDamageable
 	{
 		FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Grunts/Grunt_Short", transform.position );
 		health -= damage;
-		Debug.Log( "Ouch" );
+
+		target = FindObjectOfType<Player>().gameObject;
+		SetBehaviour( EnemyState.CHASING );
+
 		if( health <= 0 )
 		{
-			FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Grunts/Grunt_OnDeath", transform.position );
-			state = EnemyState.DEAD;
-			Destroy( gameObject );
+			OnDeath();
 		}
 	}
 
 	public virtual void ReturnToStartingPos()
 	{
 		agent.destination = startingPos;
+	}
+
+	public virtual void OnDeath()
+	{
+		FMODUnity.RuntimeManager.PlayOneShot( "event:/Enemy/Grunts/Grunt_OnDeath", transform.position );
+		agent.isStopped = true;
+		state = EnemyState.DEAD;
 	}
 
 	public virtual IEnumerator Wander()

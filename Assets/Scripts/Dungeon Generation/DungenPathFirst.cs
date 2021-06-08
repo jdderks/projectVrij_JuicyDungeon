@@ -648,9 +648,11 @@ namespace DungeonGenerationPathFirst
 
 				if( neighbourTiles.Count == 8 )
 				{
+					int randRot = Random.Range( 0, 4 );
+
 					tile.Type = TileType.GROUND;
 					tile.Graphic = tileGroundObjects[Random.Range( 0, tileGroundObjects.Count )];
-					tile.GraphicRotation = Quaternion.Euler( -90, 0, 0 );
+					tile.GraphicRotation = Quaternion.Euler( -90, 90 * randRot, 0 );
 				}
 
 				//#####################\\

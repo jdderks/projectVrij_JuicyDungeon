@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Penetrating Arrow
   m_EditorClassIdentifier: 
   name: Penetrating Arrow
+  manaCost: 15
   cooldownTime: 5
   activeTime: 0
   scriptableArrowObject: {fileID: 11400000, guid: 5283fe95dac24e64b80be35f971bb95f, type: 2}
