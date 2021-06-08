@@ -6,10 +6,12 @@ public class EnemyBehaviour_Boss : EnemyBehaviour
 {
     [SerializeField]
     private bool isHalfHealth = false;
+    private float startHealth;
 
-	private void Start()
+    private void Start()
 	{
 		Setup();
+        startHealth = health;
 	}
 
 	private void Update()
@@ -33,11 +35,11 @@ public class EnemyBehaviour_Boss : EnemyBehaviour
 
     public void ChargeUpWhenHalfHealth()
     {
-        if (health < 750 && !isHalfHealth)
+        if (health < startHealth/2 && !isHalfHealth)
         {
+            anim.SetTrigger("ChargeUp");
             isHalfHealth = true;
             agent.speed = 10f;
-            anim.SetTrigger("ChargeUp");
         }
     }
 

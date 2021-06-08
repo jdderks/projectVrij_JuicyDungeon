@@ -16,16 +16,17 @@ public class Player : MonoBehaviour, IDamageable
 	private Vector3 hitPosition = Vector3.zero;
 
 	public Transform ArrowSpawnPoint { get => arrowSpawnPoint; set => arrowSpawnPoint =  value ; }
+    public float Health { get => health; set => health = value; }
 
-	private void Awake()
+    private void Awake()
 	{
 		controller = GetComponent<PlayerController>();
 	}
 
 	public void TakeDamage( int damage )
 	{
-		health -= damage;
-		if( health < 0 )
+		Health -= damage;
+		if( Health < 0 )
 		{
 			Die();
 		}
