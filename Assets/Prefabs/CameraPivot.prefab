@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothing: 5
+  smoothing: 10
   offset: {x: 0, y: 0, z: 0}
 --- !u!1 &428423872028328900
 GameObject:

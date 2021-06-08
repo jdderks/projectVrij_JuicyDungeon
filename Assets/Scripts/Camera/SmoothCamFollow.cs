@@ -12,7 +12,7 @@ public class SmoothCamFollow : MonoBehaviour
 	private Vector3 desiredPos;
 	private Vector3 smoothedPos;
 
-	public Transform Target { get => target; set => target =  value ; }
+	public Transform Target { get => target; set => target = value; }
 
 	private void Update()
 	{
@@ -20,7 +20,7 @@ public class SmoothCamFollow : MonoBehaviour
 		smoothedPos = Vector3.SmoothDamp( transform.position, desiredPos, ref velocity, smoothing * Time.deltaTime );
 	}
 
-	private void LateUpdate()
+	private void FixedUpdate()
 	{
 		transform.position = smoothedPos;
 	}
