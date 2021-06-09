@@ -38,7 +38,7 @@ MonoBehaviour:
   Path: FMOD Builds/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637588331770017280
+  lastModified: 637588339417749512
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -138,12 +138,14 @@ MonoBehaviour:
   - {fileID: 6827530675533105337}
   - {fileID: -1417322074658733600}
   - {fileID: -6146895392632667649}
+  - {fileID: 391801291203613489}
+  - {fileID: 6959286621741349164}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7391900579602850362}
   StringsBanks:
   - {fileID: 6289329923710974296}
-  stringsBankWriteTime: 637588318814202721
+  stringsBankWriteTime: 637588339417659492
   cacheVersion: 6
 --- !u!114 &53408986058530648
 MonoBehaviour:
@@ -159,6 +161,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Effects/Bow/Bow_Shoot
   guid: 46c6ed17418bf744b7ad244bf9ebb677
+  Banks:
+  - {fileID: -7391900579602850362}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &391801291203613489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Grunts/Grunt_Charge
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Grunts/Grunt_Charge
+  guid: 6cddf43460486445a609e73ad05b9656
   Banks:
   - {fileID: -7391900579602850362}
   IsStream: 0
@@ -252,11 +277,11 @@ MonoBehaviour:
   Path: FMOD Builds/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637588318814202721
+  lastModified: 637588339417659492
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1348
+    Value: 1426
   Exists: 1
 --- !u!114 &6381480040378988700
 MonoBehaviour:
@@ -295,6 +320,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Enemy/Grunts/Grunt_OnDeath
   guid: e1efb334abbe454d89e31bf3adf18cf3
+  Banks:
+  - {fileID: -7391900579602850362}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6959286621741349164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy/Grunts/Grunt_Exhausted
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy/Grunts/Grunt_Exhausted
+  guid: f463f0145550594589aeca5463f01da8
   Banks:
   - {fileID: -7391900579602850362}
   IsStream: 0

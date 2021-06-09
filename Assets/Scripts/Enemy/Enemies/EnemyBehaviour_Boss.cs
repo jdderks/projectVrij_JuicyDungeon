@@ -50,4 +50,15 @@ public class EnemyBehaviour_Boss : EnemyBehaviour
 		anim.SetBool( "Dead", true );
 		Destroy( gameObject, 10f );
 	}
+
+    public void PlayChargeAudio()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/Grunts/Grunt_Charge", transform.position);
+    }
+
+    public void PlayChaseAudio()
+    {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Enemy/Grunts/Grunt_Exhausted", transform.position);
+
+    }
 }
